@@ -20,7 +20,7 @@ const NavbarStyles = {
       lineClamp: 2,
       width: 100,
       textTransform: 'uppercase',
-      fontSize: 18
+      fontSize: 14
     }
   },
 
