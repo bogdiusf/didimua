@@ -1,13 +1,32 @@
-import React from "react";
-import { createUseStyles } from "react-jss";
-import SidebarStyles from "./Sidebar.styles";
+import React from 'react'
+import { createUseStyles } from 'react-jss'
+import SidebarStyles from './Sidebar.styles'
 
-const useStyles = createUseStyles(SidebarStyles);
+// import { useRef } from 'react'
+// import OutsideClick from '../services/outsideClick'
 
-const Sidebar = () => {
-  const classes = useStyles();
+import { MdClose } from 'react-icons/md'
 
-  return <div className={classes.sidebar}>Penis</div>;
-};
+const useStyles = createUseStyles(SidebarStyles)
 
-export default Sidebar;
+const Sidebar = (props) => {
+  const { handleSidebar, isNavbarToggled } = props
+
+  // TODO: Deal with closing sidebar when clicking outside
+  // const sidebarRef = useRef(null)
+  // const outsideSidebarClick = OutsideClick(sidebarRef)
+
+  // outsideSidebarClick ? handleSidebar() : null
+
+  // ---------------------------------------------------------------- //
+
+  const classes = useStyles({ isNavbarToggled })
+
+  return (
+    <div className={classes.sidebar}>
+      <MdClose className={classes.closeIcon} onClick={handleSidebar} />
+    </div>
+  )
+}
+
+export default Sidebar

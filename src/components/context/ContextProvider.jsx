@@ -1,12 +1,20 @@
-import React, { useState } from "react";
-import { Context } from "./Context";
+import React, { useState, useCallback } from 'react'
+import { Context } from './Context'
 
 const ContextProvider = ({ children }) => {
-  const [isNavbarToggled, setIsNavbarToggled] = useState(false);
+  const [isNavbarToggled, setIsNavbarToggled] = useState(false)
 
-  const data = { isNavbarToggled, setIsNavbarToggled };
+  const handleSidebar = () => {
+    setIsNavbarToggled(!isNavbarToggled)
+  }
 
-  return <Context.Provider value={data}>{children}</Context.Provider>;
-};
+  const data = {
+    isNavbarToggled,
+    setIsNavbarToggled,
+    handleSidebar
+  }
 
-export default ContextProvider;
+  return <Context.Provider value={data}>{children}</Context.Provider>
+}
+
+export default ContextProvider

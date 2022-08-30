@@ -1,39 +1,39 @@
-import React, { useContext } from "react";
-import Sidebar from "./Sidebar";
-import { Context } from "../context/Context";
-import { createUseStyles } from "react-jss";
-import brandLogo from "../../assets/diana_logo.png";
-import NavbarStyles from "./Navbar.styles";
+import React, { useContext, useState } from 'react'
+import { createUseStyles } from 'react-jss'
+import { Context } from '../context/Context'
+import Sidebar from './Sidebar'
+import brandLogo from '../../assets/1717679-200.png'
+import NavbarStyles from './Navbar.styles'
 
-const useStyles = createUseStyles(NavbarStyles);
+import { MdMenu } from 'react-icons/md'
+
+const useStyles = createUseStyles(NavbarStyles)
 
 const Navbar = () => {
-  const { isNavbarToggled, setIsNavbarToggled } = useContext(Context);
+  const { isNavbarToggled, setIsNavbarToggled, handleSidebar } =
+    useContext(Context)
 
-  const classes = useStyles();
-
-  const handleClickBurgerMenu = () => {
-    setIsNavbarToggled(!isNavbarToggled);
-  };
-
-  console.log(isNavbarToggled);
+  const classes = useStyles({ isNavbarToggled })
 
   return (
     <>
       <nav className={classes.navbar}>
         <div className={classes.navLeftSide}>
           <img src={brandLogo} className={classes.brandLogo} alt="brand-logo" />
-          <span>Perfection as make up</span>
+          <div>
+            <span>Diana Mua</span>
+            <span>Perfection as make up</span>
+          </div>
         </div>
-        <div className={classes.navRightSide} onClick={handleClickBurgerMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <MdMenu onClick={handleSidebar} className={classes.navRightSide} />
       </nav>
-      {isNavbarToggled && <Sidebar />}
+      <Sidebar
+        handleSidebar={handleSidebar}
+        isNavbarToggled={isNavbarToggled}
+      />
+      <div className={classes.bgLayerWhenToggled}></div>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
