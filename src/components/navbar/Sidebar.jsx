@@ -23,8 +23,11 @@ const Sidebar = (props) => {
   const classes = useStyles({ isNavbarToggled })
 
   return (
-    <div className={classes.sidebar}>
-      <MdClose className={classes.closeIcon} onClick={handleSidebar} />
+    <div className={`${classes.sidebar} sidebar`}>
+      <MdClose
+        className={`${classes.closeIcon} close-icon`}
+        onClick={handleSidebar}
+      />
     </div>
   )
 }

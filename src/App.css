@@ -1,3 +1,12 @@
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -9,12 +18,23 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Maven Pro", sans-serif;
+  font-family: 'Maven Pro', sans-serif;
+  letter-spacing: 1.5px;
 }
 
 body,
 * {
   box-sizing: border-box;
+  animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.sidebar,
+.close-icon {
+  animation: fadeInAnimation ease-in-out 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 /* #root {

@@ -1,13 +1,16 @@
-import "./App.css";
-import Homepage from "./components/pages/homepage/Homepage";
-import ContextProvider from "./components/context/ContextProvider";
+import './App.css'
+import Routes from './components/routes/Routes'
+import ContextProvider from './components/context/ContextProvider'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <ContextProvider>
-      <Homepage />
-    </ContextProvider>
-  );
+    <BrowserRouter>
+      <ContextProvider>
+        <Routes />
+      </ContextProvider>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

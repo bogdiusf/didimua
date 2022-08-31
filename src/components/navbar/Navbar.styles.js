@@ -5,8 +5,11 @@ const NavbarStyles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    transition: '250ms ease-in-out',
-    opacity: isNavbarToggled ? 0.3 : 1
+    opacity: isNavbarToggled ? '0.3 !important' : '1 !important',
+
+    '@media screen and (min-width: 768px)': {
+      padding: [0, '7.5%']
+    }
   }),
 
   navLeftSide: {
@@ -32,19 +35,68 @@ const NavbarStyles = {
   },
 
   brandLogo: {
-    width: 50
+    width: 50,
+    filter: 'invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%)',
+
+    '&:hover': {
+      cursor: 'pointer'
+    }
   },
 
   navRightSide: {
-    fontSize: 30,
-    marginRight: 10,
+    '& svg': {
+      display: 'flex',
+      fontSize: 30,
+      marginRight: 10,
+
+      '@media screen and (min-width: 768px)': {
+        display: 'none'
+      }
+    },
   },
 
-  bgLayerWhenToggled: ({ isNavbarToggled }) => ({
-    height: '100vh',
-    width: '100vw',
-    transition: 'all 250ms linear',
-    opacity: isNavbarToggled ? 0.3 : 1
+  links: ({ path }) => ({
+    display: 'flex',
+    gap: 20,
+    marginRight: 10,
+
+    '& a': {
+      textDecoration: 'none',
+      textTransform: 'uppercase',
+      color: '#1a9790',
+      transition: '0.15s ease-in-out',
+      display: 'inline-block',
+      position: 'relative',
+
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        width: '100%',
+        transform: 'scaleX(0)',
+        height: 2,
+        bottom: 0,
+        left: 0,
+        top: 25,
+        backgroundColor: '#1a9790',
+        transformOrigin: 'bottom left',
+        transition: 'transform 0.5s ease-out'
+      },
+
+      '&:hover::after': {
+        transform: 'scaleX(1)',
+        backgroundColor: '#fd905f'
+      },
+      '&:hover, &:focus': {
+        color: '#fd905f'
+      }
+    },
+    // '& a:hover': {
+    //   color: '#fd905f'
+    // },
+
+    '@media screen and (max-width: 768px)': {
+      display: 'none'
+    }
   })
 }
 

@@ -1,6 +1,8 @@
 const SidebarStyles = {
   sidebar: ({ isNavbarToggled }) => ({
     display: isNavbarToggled ? 'flex' : 'none',
+    flexDirection: 'column',
+    gap: 20,
     width: '50vw',
     maxWidth: 300,
     height: '110vh',
@@ -15,7 +17,8 @@ const SidebarStyles = {
   closeIcon: {
     fontSize: 30,
     margin: [20, 0, 0, 20]
-  }
+  },
+
 }
 
 export default SidebarStyles
