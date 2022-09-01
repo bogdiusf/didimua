@@ -12,14 +12,11 @@ import { MdMenu } from 'react-icons/md'
 const useStyles = createUseStyles(NavbarStyles)
 
 const Navbar = () => {
-  const { isNavbarToggled, handleSidebar, currentLocation } =
-    useContext(Context)
+  const { isNavbarToggled, handleSidebar } = useContext(Context)
 
   const navigateTo = useNavigate()
 
-  const path = currentLocation.pathname
-
-  const classes = useStyles({ isNavbarToggled, path })
+  const classes = useStyles({ isNavbarToggled })
 
   return (
     <>

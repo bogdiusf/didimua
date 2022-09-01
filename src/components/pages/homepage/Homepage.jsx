@@ -10,7 +10,11 @@ function Homepage() {
 
   const classes = useStyles({ isNavbarToggled })
 
-  return <div className={`homepage ${classes.homepage}`}>Homepage</div>
+  return (
+    <div className={classes.homepageContainer}>
+      <div>Homepage</div>
+    </div>
+  )
 }
 
 export default Homepage

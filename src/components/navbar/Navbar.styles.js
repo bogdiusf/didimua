@@ -1,11 +1,21 @@
+
 const NavbarStyles = {
+  '@keyframes fadeInAnimation': {
+    '0%': {
+      opacity: 0
+    },
+    '100%': {
+      opacity: 1
+    }
+  },
   navbar: ({ isNavbarToggled }) => ({
     boxShadow: '0 1px 3px rgb(0 0 0 / 30%), 0 2px 2px rgb(0 0 0 / 16%), 0 0 2px rgb(0 0 0 / 17%)',
     padding: [0, 20],
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    opacity: isNavbarToggled ? '0.3 !important' : '1 !important',
+    transition: 'opacity 0.5s ease-in-out',
+    opacity: isNavbarToggled ? '0.3' : '1 ',
 
     '@media screen and (min-width: 768px)': {
       padding: [0, '7.5%']
@@ -13,6 +23,9 @@ const NavbarStyles = {
   }),
 
   navLeftSide: {
+    animation: '$fadeInAnimation ease-in-out 0.5s',
+    animationIterationCount: 1,
+    animationFillMode: 'forwards',
     display: 'flex',
     alignItems: 'center',
     padding: 10,
@@ -44,6 +57,9 @@ const NavbarStyles = {
   },
 
   navRightSide: {
+    animation: '$fadeInAnimation ease-in-out 1s',
+    animationIterationCount: 1,
+    animationFillMode: 'forwards',
     '& svg': {
       display: 'flex',
       fontSize: 30,
@@ -55,7 +71,7 @@ const NavbarStyles = {
     },
   },
 
-  links: ({ path }) => ({
+  links: {
     display: 'flex',
     gap: 20,
     marginRight: 10,
@@ -64,7 +80,7 @@ const NavbarStyles = {
       textDecoration: 'none',
       textTransform: 'uppercase',
       color: '#1a9790',
-      transition: '0.15s ease-in-out',
+      transition: '0.25s ease-in-out',
       display: 'inline-block',
       position: 'relative',
 
@@ -79,25 +95,22 @@ const NavbarStyles = {
         top: 25,
         backgroundColor: '#1a9790',
         transformOrigin: 'bottom left',
-        transition: 'transform 0.5s ease-out'
+        transition: 'transform 0.25s ease-out'
       },
 
-      '&:hover::after': {
+      '&:hover::after, &:focus::after, &:active::after': {
         transform: 'scaleX(1)',
         backgroundColor: '#fd905f'
       },
-      '&:hover, &:focus': {
+      '&:hover, &:focus, &:active': {
         color: '#fd905f'
       }
     },
-    // '& a:hover': {
-    //   color: '#fd905f'
-    // },
 
     '@media screen and (max-width: 768px)': {
       display: 'none'
     }
-  })
+  }
 }
 
 export default NavbarStyles

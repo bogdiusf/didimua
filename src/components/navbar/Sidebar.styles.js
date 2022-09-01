@@ -1,4 +1,12 @@
 const SidebarStyles = {
+  '@keyframes fadeInAnimation': {
+    '0%': {
+      opacity: 0
+    },
+    '100%': {
+      opacity: 1
+    }
+  },
   sidebar: ({ isNavbarToggled }) => ({
     display: isNavbarToggled ? 'flex' : 'none',
     flexDirection: 'column',
@@ -12,6 +20,9 @@ const SidebarStyles = {
     top: 0,
     right: 0,
     zIndex: 999,
+    animation: '$fadeInAnimation ease-in-out 0.5s',
+    animationIterationCount: 1,
+    animationFillMode: 'backwards',
   }),
 
   closeIcon: {
