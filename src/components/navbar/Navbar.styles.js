@@ -72,7 +72,7 @@ const NavbarStyles = {
 
   links: {
     display: 'flex',
-    gap: 20,
+    gap: 75,
     marginRight: 10,
 
     '& a': {
