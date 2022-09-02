@@ -4,18 +4,13 @@ import RoutesData from './RoutesData'
 import Navbar from '../navigation/navbar/Navbar'
 import CustomRoute from './CustomRoute'
 
-import Header from '../header/Header'
-import Footer from '../footer/Footer'
-
-// const Footer = lazy(() => import('../footer/Footer'))
-// const Header = lazy(() => import('../header/Header'))
+const Footer = lazy(() => import('../footer/Footer'))
 
 export default function NavbarRoutes() {
   return (
     <>
       <Navbar />
       <Suspense>
-        <Header />
         <Routes>
           {RoutesData().map((route, index) => (
             <Route
