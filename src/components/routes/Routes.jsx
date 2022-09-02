@@ -2,14 +2,13 @@ import { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import RoutesData from './RoutesData'
 import Navbar from '../navbar/Navbar'
-import Loading from '../pages/is-loading/Loading'
 import CustomRoute from './CustomRoute'
 
 export default function NavbarRoutes() {
   return (
     <>
       <Navbar />
-      <Suspense fallback={<Loading />}>
+      <Suspense>
         <Routes>
           {RoutesData().map((route, index) => (
             <Route
