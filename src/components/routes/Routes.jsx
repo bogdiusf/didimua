@@ -1,8 +1,10 @@
-import { Suspense } from 'react'
+import { Suspense, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import RoutesData from './RoutesData'
-import Navbar from '../navbar/Navbar'
+import Navbar from '../navigation/navbar/Navbar'
 import CustomRoute from './CustomRoute'
+
+const Footer = lazy(() => import('../footer/Footer'))
 
 export default function NavbarRoutes() {
   return (
@@ -22,6 +24,7 @@ export default function NavbarRoutes() {
           ))}
         </Routes>
       </Suspense>
+      <Footer />
     </>
   )
 }

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { createUseStyles } from 'react-jss'
-import { Context } from '../context/Context'
-import Sidebar from './Sidebar'
-import brandLogo from '../../assets/1717679-200.png'
+import { Context } from '../../context/Context'
+import Sidebar from '../sidebar/Sidebar'
+import brandLogo from '../../../assets/1717679-200.png'
 import NavbarStyles from './Navbar.styles'
 
 import { Link, useNavigate } from 'react-router-dom'
