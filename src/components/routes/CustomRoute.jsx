@@ -8,10 +8,7 @@ const CustomRoute = ({ path, element }) => {
   useEffect(() => {
     setIsLoading(true)
 
-    setTimeout(
-      () => setIsLoading(false),
-      Math.floor(Math.random() * (3000 - 100 + 1) + 100)
-    )
+    setTimeout(() => setIsLoading(false), 2000)
   }, [path])
 
   return isLoading ? <Loading /> : element
