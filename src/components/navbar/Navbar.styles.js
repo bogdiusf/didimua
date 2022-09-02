@@ -98,11 +98,11 @@ const NavbarStyles = {
         transition: 'transform 0.25s ease-out'
       },
 
-      '&:hover::after, &:focus::after, &:active::after': {
+      '&:hover::after, &:focus::after': {
         transform: 'scaleX(1)',
         backgroundColor: '#fd905f'
       },
-      '&:hover, &:focus, &:active': {
+      '&:hover, &:focus': {
         color: '#fd905f'
       }
     },
