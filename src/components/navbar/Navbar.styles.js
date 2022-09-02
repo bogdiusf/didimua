@@ -1,4 +1,3 @@
-
 const NavbarStyles = {
   '@keyframes fadeInAnimation': {
     '0%': {
@@ -80,7 +79,7 @@ const NavbarStyles = {
       textDecoration: 'none',
       textTransform: 'uppercase',
       color: '#1a9790',
-      transition: '0.25s ease-in-out',
+      transition: '0.5s ease-in-out',
       display: 'inline-block',
       position: 'relative',
 

@@ -3,6 +3,7 @@ import { Context } from './Context'
 
 const ContextProvider = ({ children }) => {
   const [isNavbarToggled, setIsNavbarToggled] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSidebar = () => {
     setIsNavbarToggled(!isNavbarToggled)
@@ -11,7 +12,9 @@ const ContextProvider = ({ children }) => {
   const data = {
     isNavbarToggled,
     setIsNavbarToggled,
-    handleSidebar
+    handleSidebar,
+    isLoading,
+    setIsLoading
   }
 
   return <Context.Provider value={data}>{children}</Context.Provider>

@@ -1,20 +1,24 @@
 import { Suspense } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { routes } from './RoutesData'
+import { Route, Routes } from 'react-router-dom'
+import RoutesData from './RoutesData'
 import Navbar from '../navbar/Navbar'
+import Loading from '../pages/is-loading/Loading'
+import CustomRoute from './CustomRoute'
 
 export default function NavbarRoutes() {
   return (
     <>
       <Navbar />
-      <Suspense fallback={<div>Fallback component - spinner</div>}>
+      <Suspense fallback={<Loading />}>
         <Routes>
-          {routes.map((route, index) => (
+          {RoutesData().map((route, index) => (
             <Route
-              key={index}
               exact
               path={route.path}
-              element={route.component}
+              key={index}
+              element={
+                <CustomRoute element={route.component} path={route.path} />
+              }
             />
           ))}
         </Routes>
