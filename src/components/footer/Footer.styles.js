@@ -8,6 +8,7 @@ const FooterStyles = {
     textTransform: 'uppercase',
     textDecoration: 'underline',
   }
+
 }
 
 export default FooterStyles
