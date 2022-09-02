@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../context/Context'
 import Loading from '../pages/is-loading/Loading'
+import { Navigate } from 'react-router-dom'
 
 const CustomRoute = ({ path, element }) => {
   const { isLoading, setIsLoading } = useContext(Context)

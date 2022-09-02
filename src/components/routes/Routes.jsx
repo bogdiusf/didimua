@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import RoutesData from './RoutesData'
 import Navbar from '../navbar/Navbar'
 import Loading from '../pages/is-loading/Loading'
