@@ -1,4 +1,4 @@
-const HomepageStyles = {
+const HeaderStyles = {
   '@keyframes fadeInAnimation': {
     '0%': {
       opacity: 0
@@ -7,24 +7,27 @@ const HomepageStyles = {
       opacity: 1
     }
   },
-  homepageContainer: ({ isNavbarToggled }) => ({
+  headerContainer: ({ isNavbarToggled }) => ({
+    marginTop: 50,
+
+    textTransform: 'uppercase',
+    textDecoration: 'underline',
     transition: 'opacity 0.5s ease-in-out',
     opacity: isNavbarToggled ? 0.3 : 1,
-    backgroundColor: '#fd905f',
     pointerEvents: isNavbarToggled ? 'none' : 'auto',
-    // height: 'calc(100vh - 70px)',
-    height: '210vh',
-    width: '100%',
-    display: 'grid',
-    placeItems: 'center',
 
     '& > *': {
       animation: '$fadeInAnimation ease-in-out 0.5s',
       animationIterationCount: 1,
       animationFillMode: 'forwards',
-
+      height: 200,
+      width: '100%',
+      backgroundColor: '#1a9790',
+      display: 'grid',
+      placeItems: 'center',
     }
   })
+
 }
 
-export default HomepageStyles
+export default HeaderStyles
