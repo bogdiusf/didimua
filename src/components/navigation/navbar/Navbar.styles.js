@@ -35,7 +35,7 @@ const NavbarStyles = {
     display: 'flex',
     flexDirection: 'column',
     textTransform: 'uppercase',
-    marginTop: 15
+    marginTop: 10
   },
 
   animatingText: {
