@@ -6,9 +6,9 @@ import LoadingStyles from './Loading.styles'
 const useStyles = createUseStyles(LoadingStyles)
 
 const Loading = () => {
-  const { isNavbarToggled } = useContext(Context)
+  const { isSidebarToggled } = useContext(Context)
 
-  const classes = useStyles({ isNavbarToggled })
+  const classes = useStyles({ isSidebarToggled })
 
   return (
     <div className={classes.loadingContainer}>

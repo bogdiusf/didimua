@@ -7,13 +7,14 @@ const HomepageStyles = {
       opacity: 1
     }
   },
-  homepageContainer: ({ isNavbarToggled }) => ({
-    marginTop: 50,
+  homepageContainer: ({ isSidebarToggled }) => ({
     transition: 'opacity 0.5s ease-in-out',
-    opacity: isNavbarToggled ? 0.3 : 1,
-    pointerEvents: isNavbarToggled ? 'none' : 'auto',
+    opacity: isSidebarToggled ? 0.3 : 1,
+    pointerEvents: isSidebarToggled ? 'none' : 'auto',
     height: 'calc(100vh - 70px)',
     width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
 
     '& > *': {
       animation: '$fadeInAnimation ease-in-out 0.5s',
@@ -24,9 +25,14 @@ const HomepageStyles = {
   }),
 
   sliderContainer: {
-    '& .awssld__container': {
+    '& .awssld__wrapper': {
+      width: '100%',
+      height: 400,
       paddingBottom: 0,
-      height: 400
+
+      '@media screen and (max-width: 768px)': {
+        height: 300
+      }
     },
 
     '& .awssld__content': {

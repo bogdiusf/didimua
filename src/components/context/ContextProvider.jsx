@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import { Context } from './Context'
 
 const ContextProvider = ({ children }) => {
-  const [isNavbarToggled, setIsNavbarToggled] = useState(false)
+  const [isSidebarToggled, setIsSidebarToggled] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSidebar = () => {
-    setIsNavbarToggled(!isNavbarToggled)
+    setIsSidebarToggled(!isSidebarToggled)
   }
 
   const data = {
-    isNavbarToggled,
-    setIsNavbarToggled,
+    isSidebarToggled,
+    setIsSidebarToggled,
     handleSidebar,
     isLoading,
     setIsLoading

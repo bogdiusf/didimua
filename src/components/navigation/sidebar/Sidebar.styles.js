@@ -7,12 +7,11 @@ const SidebarStyles = {
       opacity: 1
     }
   },
-  sidebar: ({ isNavbarToggled }) => ({
-    display: isNavbarToggled ? 'flex' : 'none',
+  sidebar: ({ isSidebarToggled }) => ({
+    display: isSidebarToggled ? 'flex' : 'none',
     flexDirection: 'column',
     gap: 20,
-    width: '50vw',
-    maxWidth: 300,
+    width: '80%',
     height: '110vh',
     backgroundColor: 'white',
     boxShadow: '0 1px 3px rgb(0 0 0 / 30%), 0 2px 2px rgb(0 0 0 / 16%), 0 0 12px rgb(0 0 0 / 37%)',
@@ -23,6 +22,10 @@ const SidebarStyles = {
     animation: '$fadeInAnimation ease-in-out 0.5s',
     animationIterationCount: 1,
     animationFillMode: 'backwards',
+
+    '@media (min-width: 768px)': {
+      maxWidth: 400,
+    }
   }),
 
   closeIcon: {

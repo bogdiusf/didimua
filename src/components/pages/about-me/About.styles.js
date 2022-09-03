@@ -7,10 +7,10 @@ const AboutStyles = {
       opacity: 1
     }
   },
-  aboutContainer: ({ isNavbarToggled }) => ({
+  aboutContainer: ({ isSidebarToggled }) => ({
     transition: 'opacity 0.5s ease-in-out',
-    opacity: isNavbarToggled ? 0.3 : 1,
-    pointerEvents: isNavbarToggled ? 'none' : 'auto',
+    opacity: isSidebarToggled ? 0.3 : 1,
+    pointerEvents: isSidebarToggled ? 'none' : 'auto',
     height: 'calc(100vh - 70px)',
     width: '100%',
     display: 'grid',

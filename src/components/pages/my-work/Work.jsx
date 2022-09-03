@@ -6,9 +6,9 @@ import WorkStyles from './Work.styles'
 const useStyles = createUseStyles(WorkStyles)
 
 const Work = () => {
-  const { isNavbarToggled } = useContext(Context)
+  const { isSidebarToggled } = useContext(Context)
 
-  const classes = useStyles({ isNavbarToggled })
+  const classes = useStyles({ isSidebarToggled })
 
   return (
     <div className={classes.workContainer}>

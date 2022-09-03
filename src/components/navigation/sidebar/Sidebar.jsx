@@ -10,7 +10,7 @@ import { MdClose } from 'react-icons/md'
 const useStyles = createUseStyles(SidebarStyles)
 
 const Sidebar = (props) => {
-  const { handleSidebar, isNavbarToggled } = props
+  const { handleSidebar, isSidebarToggled } = props
 
   // TODO: Deal with closing sidebar when clicking outside
   // const sidebarRef = useRef(null)
@@ -20,7 +20,7 @@ const Sidebar = (props) => {
 
   // ---------------------------------------------------------------- //
 
-  const classes = useStyles({ isNavbarToggled })
+  const classes = useStyles({ isSidebarToggled })
 
   return (
     <div className={`${classes.sidebar} sidebar`}>

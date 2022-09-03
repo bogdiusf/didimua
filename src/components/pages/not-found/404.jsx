@@ -6,9 +6,9 @@ import _404Styles from './404.styles'
 const useStyles = createUseStyles(_404Styles)
 
 const _404 = () => {
-  const { isNavbarToggled } = useContext(Context)
+  const { isSidebarToggled } = useContext(Context)
 
-  const classes = useStyles({ isNavbarToggled })
+  const classes = useStyles({ isSidebarToggled })
 
   return (
     <div className={classes._404Container}>

@@ -6,9 +6,9 @@ import AboutStyles from './About.styles'
 const useStyles = createUseStyles(AboutStyles)
 
 const About = () => {
-  const { isNavbarToggled } = useContext(Context)
+  const { isSidebarToggled } = useContext(Context)
 
-  const classes = useStyles({ isNavbarToggled })
+  const classes = useStyles({ isSidebarToggled })
 
   return (
     <div className={classes.aboutContainer}>

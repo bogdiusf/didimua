@@ -7,17 +7,16 @@ const NavbarStyles = {
       opacity: 1
     }
   },
-  navbar: ({ isNavbarToggled }) => ({
-    boxShadow: '0 1px 3px rgb(0 0 0 / 30%), 0 2px 2px rgb(0 0 0 / 16%), 0 0 2px rgb(0 0 0 / 17%)',
-    padding: [0, 20],
+  navbar: ({ isSidebarToggled }) => ({
+    padding: [20, 20],
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     transition: 'opacity 0.5s ease-in-out',
-    opacity: isNavbarToggled ? '0.3' : '1 ',
+    opacity: isSidebarToggled ? '0.3' : '1 ',
 
     '@media screen and (min-width: 768px)': {
-      padding: [0, '7.5%']
+      padding: [20, '7.5%']
     }
   }),
 
@@ -28,20 +27,15 @@ const NavbarStyles = {
     display: 'flex',
     alignItems: 'center',
     padding: 10,
-    '& > div': {
+    gap: 10,
+    fontSize: 14,
+    '& div:first-child': {
       display: 'flex',
       flexDirection: 'column',
-      marginLeft: 10,
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      lineClamp: 2,
-      width: 100,
       textTransform: 'uppercase',
-      fontSize: 12,
 
-      '& > span:first-child': {
+      '& span': {
         color: '#FD905F',
-        fontSize: 14
       },
     }
   },
