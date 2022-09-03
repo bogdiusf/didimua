@@ -13,7 +13,7 @@ import brandLogo from '../../../assets/1717679-200.png'
 const useStyles = createUseStyles(NavbarStyles)
 
 const Navbar = () => {
-  const { isSidebarToggled, setIsSidebarToggled, handleSidebar } =
+  const { isSidebarToggled, setIsSidebarToggledCallback, handleSidebar } =
     useContext(Context)
   const [isNavSticky, setIsNavSticky] = useState(false)
 
@@ -55,7 +55,7 @@ const Navbar = () => {
         <div className={classes.navRightSide}>
           <Links
             wrapperClass={classes.navLinks}
-            setIsSidebarToggled={setIsSidebarToggled}
+            setIsSidebarToggledCallback={setIsSidebarToggledCallback}
           />
           <MdMenu onClick={handleSidebar} className={classes.menuIcon} />
         </div>

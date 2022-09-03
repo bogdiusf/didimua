@@ -1,16 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Links = ({ wrapperClass, setIsSidebarToggled }) => {
+const Links = ({
+  wrapperClass,
+  setIsSidebarToggledCallback,
+  isSidebarToggled = false
+}) => {
   return (
     <div className={wrapperClass}>
-      <Link to="/my-work" onClick={() => setIsSidebarToggled(false)}>
+      {isSidebarToggled && (
+        <Link to="/" onClick={() => setIsSidebarToggledCallback(false)}>
+          Home
+        </Link>
+      )}
+      <Link to="/my-work" onClick={() => setIsSidebarToggledCallback(false)}>
         My work
       </Link>
-      <Link to="/about-me" onClick={() => setIsSidebarToggled(false)}>
+      <Link to="/about-me" onClick={() => setIsSidebarToggledCallback(false)}>
         About me
       </Link>
-      <Link to="/contact" onClick={() => setIsSidebarToggled(false)}>
+      <Link to="/contact" onClick={() => setIsSidebarToggledCallback(false)}>
         Contact me
       </Link>
     </div>

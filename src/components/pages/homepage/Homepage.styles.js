@@ -53,9 +53,8 @@ const HomepageStyles = {
   homepageBody: {
     height: '100%',
     display: 'flex',
-    gap: 50,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
   }
 }

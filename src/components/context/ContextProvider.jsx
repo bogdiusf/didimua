@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { Context } from './Context'
 
 const ContextProvider = ({ children }) => {
   const [isSidebarToggled, setIsSidebarToggled] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
+  const setIsSidebarToggledCallback = useCallback((value) =>
+    setIsSidebarToggled(value)
+  )
+
   const handleSidebar = () => {
-    setIsSidebarToggled(!isSidebarToggled)
+    setIsSidebarToggledCallback(!isSidebarToggled)
   }
 
   const data = {
@@ -14,7 +18,8 @@ const ContextProvider = ({ children }) => {
     setIsSidebarToggled,
     handleSidebar,
     isLoading,
-    setIsLoading
+    setIsLoading,
+    setIsSidebarToggledCallback
   }
 
   return <Context.Provider value={data}>{children}</Context.Provider>

@@ -34,7 +34,10 @@ const Sidebar = ({ handleSidebar, isSidebarToggled }) => {
   return (
     <div className={classes.sidebar}>
       <MdClose className={classes.closeIcon} onClick={handleSidebar} />
-      <Links wrapperClass={classes.sidebarLinks} />
+      <Links
+        wrapperClass={classes.sidebarLinks}
+        isSidebarToggled={isSidebarToggled}
+      />
     </div>
   )
 }
