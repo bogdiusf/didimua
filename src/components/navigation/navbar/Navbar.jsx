@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createUseStyles } from 'react-jss'
+import { useLockNavScroll } from '../../utils/hooks/useLockNavScroll'
 import TextLoop from 'react-text-loop'
 import { MdMenu } from 'react-icons/md'
 import { Context } from '../../context/Context'
@@ -14,10 +15,13 @@ const useStyles = createUseStyles(NavbarStyles)
 const Navbar = () => {
   const { isSidebarToggled, setIsSidebarToggled, handleSidebar } =
     useContext(Context)
+  const [isNavSticky, setIsNavSticky] = useState(false)
+
+  useLockNavScroll(setIsNavSticky)
 
   const navigateTo = useNavigate()
 
-  const classes = useStyles({ isSidebarToggled })
+  const classes = useStyles({ isSidebarToggled, isNavSticky })
 
   return (
     <>

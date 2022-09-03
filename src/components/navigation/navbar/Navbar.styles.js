@@ -7,13 +7,19 @@ const NavbarStyles = {
       opacity: 1
     }
   },
-  navbar: ({ isSidebarToggled }) => ({
+  navbar: ({ isSidebarToggled, isNavSticky }) => ({
+    backgroundColor: '#f8f8f8',
     padding: [20, 20],
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     transition: 'opacity 0.5s ease-in-out',
     opacity: isSidebarToggled ? '0.3' : '1 ',
+    width: '100%',
+    position: 'sticky',
+    top: 0,
+    boxShadow: isNavSticky ? '0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%)' : 'none',
+    zIndex: 1,
 
     '@media screen and (min-width: 768px)': {
       padding: [20, '7.5%']

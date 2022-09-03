@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createUseStyles } from 'react-jss'
 import SidebarStyles from './Sidebar.styles'
 import Links from '../../shared/navigation/Links'
 
 // import { useRef } from 'react'
-// import OutsideClick from '../services/outsideClick'
+// import OutsideClick from '../utils/hooks/useOutsideClick'
 
 import { MdClose } from 'react-icons/md'
 
@@ -20,6 +20,16 @@ const Sidebar = ({ handleSidebar, isSidebarToggled }) => {
   // ---------------------------------------------------------------- //
 
   const classes = useStyles({ isSidebarToggled })
+
+  useEffect(() => {
+    if (isSidebarToggled) {
+      document.body.style.overflow = 'hidden'
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isSidebarToggled])
 
   return (
     <div className={classes.sidebar}>
