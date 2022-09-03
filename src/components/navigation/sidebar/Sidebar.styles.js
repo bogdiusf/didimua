@@ -23,8 +23,8 @@ const SidebarStyles = {
     animationIterationCount: 1,
     animationFillMode: 'backwards',
 
-    '@media (min-width: 768px)': {
-      maxWidth: 400,
+    '@media (min-width: 550px)': {
+      width: '60%',
     }
   }),
 

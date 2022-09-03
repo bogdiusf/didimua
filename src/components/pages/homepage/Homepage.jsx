@@ -26,6 +26,7 @@ function Homepage() {
     <div className={classes.homepageContainer}>
       <header>
         <AutoplaySlider
+          className={classes.sliderContainer}
           play={true}
           cancelOnInteraction={false}
           interval={5000}
@@ -33,7 +34,6 @@ function Homepage() {
           mobileTouch={true}
           organicArrows={false}
           animation="scaleOutAnimation"
-          className={classes.sliderContainer}
           buttons={false}
         >
           <div data-src={banner1} data-attr="banner-image"></div>
@@ -42,7 +42,8 @@ function Homepage() {
           <div data-src={banner4} data-attr="banner-image"></div>
         </AutoplaySlider>
       </header>
-      <section>
+
+      <section className={classes.homepageBody}>
         <div>1</div>
         <div>2</div>
         <div>3</div>

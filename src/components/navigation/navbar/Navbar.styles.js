@@ -41,7 +41,7 @@ const NavbarStyles = {
   },
 
   brandLogo: {
-    width: 50,
+    width: '20%',
     filter: 'invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%)',
 
     '&:hover': {
