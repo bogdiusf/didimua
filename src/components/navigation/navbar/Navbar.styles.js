@@ -29,19 +29,21 @@ const NavbarStyles = {
     padding: 10,
     gap: 10,
     fontSize: 14,
-    '& div:first-child': {
-      display: 'flex',
-      flexDirection: 'column',
-      textTransform: 'uppercase',
+  },
 
-      '& span': {
-        color: '#FD905F',
-      },
-    }
+  logoText: {
+    display: 'flex',
+    flexDirection: 'column',
+    textTransform: 'uppercase',
+    marginTop: 15
+  },
+
+  animatingText: {
+    color: '#FD905F',
   },
 
   brandLogo: {
-    width: '20%',
+    width: '4rem',
     filter: 'invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%)',
 
     '&:hover': {
@@ -53,18 +55,18 @@ const NavbarStyles = {
     animation: '$fadeInAnimation ease-in-out 1s',
     animationIterationCount: 1,
     animationFillMode: 'forwards',
-    '& svg': {
-      display: 'flex',
-      fontSize: 30,
-      marginRight: 10,
-
-      '@media screen and (min-width: 768px)': {
-        display: 'none'
-      }
-    },
   },
 
-  links: {
+  menuIcon: {
+    fontSize: 30,
+    marginRight: 10,
+
+    '@media screen and (min-width: 768px)': {
+      display: 'none'
+    }
+  },
+
+  navLinks: {
     display: 'flex',
     gap: 75,
     marginRight: 10,

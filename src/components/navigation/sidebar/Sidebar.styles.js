@@ -28,6 +28,23 @@ const SidebarStyles = {
     }
   }),
 
+  sidebarLinks: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 50,
+    margin: [0, 'auto'],
+
+    '& a': {
+      textDecoration: 'none',
+      textTransform: 'uppercase',
+      color: '#1a9790',
+      transition: '0.5s ease-in-out',
+      display: 'inline-block',
+      position: 'relative',
+      touchAction: 'none'
+    }
+  },
+
   closeIcon: {
     fontSize: 30,
     margin: [20, 0, 0, 20]
