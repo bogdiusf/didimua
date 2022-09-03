@@ -39,9 +39,8 @@ const SidebarStyles = {
       textTransform: 'uppercase',
       color: '#1a9790',
       transition: '0.5s ease-in-out',
-      display: 'inline-block',
       position: 'relative',
-      touchAction: 'none'
+      textAlign: 'center',
     }
   },
 
