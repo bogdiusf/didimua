@@ -6,11 +6,7 @@ import { defaultLinkStyles } from './Links.styles'
 
 const useStyles = createUseStyles(defaultLinkStyles)
 
-const Links = ({
-  wrapperClass,
-  setIsSidebarToggledCallback,
-  isSidebarToggled = false
-}) => {
+const Links = ({ wrapperClass, isSidebarToggled = false, handleSidebar }) => {
   const classes = useStyles()
 
   const navigateTo = useNavigate()
@@ -18,7 +14,7 @@ const Links = ({
 
   const handleLinkClick = (path) => {
     navigateTo(path)
-    // isSidebarToggled ? setIsSidebarToggledCallback(false) : null
+    handleSidebar()
   }
 
   const filteredRoutesArray = RoutesData().filter(

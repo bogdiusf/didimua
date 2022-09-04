@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss'
 import { MdClose } from 'react-icons/md'
 import Links from '../../shared/navigation/Links'
 import { useLockBodyOverflow } from '../../utils/hooks/useLockBodyOverflow'
-import { useDetectOutsideClick } from '../../utils/hooks/useDetectOutsideClick'
+// import { useDetectOutsideClick } from '../../utils/hooks/useDetectOutsideClick'
 import SidebarStyles from './Sidebar.styles'
 
 const useStyles = createUseStyles(SidebarStyles)
@@ -28,6 +28,7 @@ const Sidebar = ({ handleSidebar, isSidebarToggled }) => {
       <Links
         wrapperClass={classes.sidebarLinks}
         isSidebarToggled={isSidebarToggled}
+        handleSidebar={handleSidebar}
       />
     </div>
   )

@@ -54,11 +54,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className={classes.navRightSide}>
-          <Links
-            wrapperClass={classes.navLinks}
-            setIsSidebarToggledCallback={setIsSidebarToggledCallback}
-            path={currentPath.pathname}
-          />
+          <Links wrapperClass={classes.navLinks} path={currentPath.pathname} />
           <MdMenu onClick={handleSidebar} className={classes.menuIcon} />
         </div>
       </nav>
