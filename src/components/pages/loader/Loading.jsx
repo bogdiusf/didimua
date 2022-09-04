@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from '../../context/Context'
 import { createUseStyles } from 'react-jss'
 import LoadingStyles from './Loading.styles'
+import brandLogo from '../../../assets/diana_logo_whitebg.svg'
 
 const useStyles = createUseStyles(LoadingStyles)
 
@@ -12,7 +13,7 @@ const Loading = () => {
 
   return (
     <div className={classes.loadingContainer}>
-      <div>Loading...</div>
+      <img src={brandLogo} className={classes.loadingLogo} />
     </div>
   )
 }

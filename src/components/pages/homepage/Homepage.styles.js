@@ -11,14 +11,14 @@ const HomepageStyles = {
     transition: 'opacity 0.5s ease-in-out',
     opacity: isSidebarToggled ? 0.3 : 1,
     pointerEvents: isSidebarToggled ? 'none' : 'auto',
-    height: 'calc(200vh - 70px)',
+    minHeight: '100vh',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     position: 'relative',
 
     '& > *': {
-      animation: '$fadeInAnimation ease-in-out 0.5s',
+      animation: '$fadeInAnimation ease-in-out 1.5s',
       animationIterationCount: 1,
       animationFillMode: 'forwards',
 
@@ -51,7 +51,7 @@ const HomepageStyles = {
   },
 
   homepageBody: {
-    height: '100%',
+    height: 300,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',

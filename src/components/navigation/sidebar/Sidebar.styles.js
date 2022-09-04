@@ -12,7 +12,7 @@ const SidebarStyles = {
     flexDirection: 'column',
     gap: 20,
     width: '80%',
-    height: '110vh',
+    height: '100vh',
     backgroundColor: '#f8f8f8',
     boxShadow: '0 1px 3px rgb(0 0 0 / 30%), 0 2px 2px rgb(0 0 0 / 16%), 0 0 12px rgb(0 0 0 / 37%)',
     position: 'absolute',

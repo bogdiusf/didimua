@@ -77,37 +77,6 @@ const NavbarStyles = {
     gap: 75,
     marginRight: 10,
 
-    '& a': {
-      textDecoration: 'none',
-      textTransform: 'uppercase',
-      color: '#1a9790',
-      transition: '0.5s ease-in-out',
-      display: 'inline-block',
-      position: 'relative',
-
-      '&::after': {
-        content: '""',
-        position: 'absolute',
-        width: '100%',
-        transform: 'scaleX(0)',
-        height: 2,
-        bottom: 0,
-        left: 0,
-        top: 25,
-        backgroundColor: '#1a9790',
-        transformOrigin: 'bottom left',
-        transition: 'transform 0.25s ease-out'
-      },
-
-      '&:hover::after, &:focus::after': {
-        transform: 'scaleX(1)',
-        backgroundColor: '#fd905f'
-      },
-      '&:hover, &:focus': {
-        color: '#fd905f'
-      }
-    },
-
     '@media screen and (max-width: 768px)': {
       display: 'none'
     }

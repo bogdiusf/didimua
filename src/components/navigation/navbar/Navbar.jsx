@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { createUseStyles } from 'react-jss'
 import { useLockNavScroll } from '../../utils/hooks/useLockNavScroll'
 import TextLoop from 'react-text-loop'
@@ -16,6 +16,7 @@ const Navbar = () => {
   const { isSidebarToggled, setIsSidebarToggledCallback, handleSidebar } =
     useContext(Context)
   const [isNavSticky, setIsNavSticky] = useState(false)
+  const currentPath = useLocation()
 
   useLockNavScroll(setIsNavSticky)
 
@@ -56,6 +57,7 @@ const Navbar = () => {
           <Links
             wrapperClass={classes.navLinks}
             setIsSidebarToggledCallback={setIsSidebarToggledCallback}
+            path={currentPath.pathname}
           />
           <MdMenu onClick={handleSidebar} className={classes.menuIcon} />
         </div>

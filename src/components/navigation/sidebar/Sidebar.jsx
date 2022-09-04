@@ -1,38 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { createUseStyles } from 'react-jss'
-import SidebarStyles from './Sidebar.styles'
-import Links from '../../shared/navigation/Links'
-
-// import { useRef } from 'react'
-// import OutsideClick from '../utils/hooks/useOutsideClick'
-
 import { MdClose } from 'react-icons/md'
+import Links from '../../shared/navigation/Links'
+import { useLockBodyOverflow } from '../../utils/hooks/useLockBodyOverflow'
+import { useDetectOutsideClick } from '../../utils/hooks/useDetectOutsideClick'
+import SidebarStyles from './Sidebar.styles'
 
 const useStyles = createUseStyles(SidebarStyles)
 
 const Sidebar = ({ handleSidebar, isSidebarToggled }) => {
-  // TODO: Deal with closing sidebar when clicking outside
-  // const sidebarRef = useRef(null)
-  // const outsideSidebarClick = OutsideClick(sidebarRef)
-
-  // outsideSidebarClick ? handleSidebar() : null
-
-  // ---------------------------------------------------------------- //
+  const sidebarRef = useRef(null)
 
   const classes = useStyles({ isSidebarToggled })
 
-  useEffect(() => {
-    if (isSidebarToggled) {
-      document.body.style.overflow = 'hidden'
-    }
+  // if (useDetectOutsideClick(sidebarRef)) {
+  //   const handleSidebarPromise = new Promise((resolve) => {
+  //     resolve()
+  //   })
+  //   handleSidebarPromise.then(handleSidebar())
+  // }
 
-    return () => {
-      document.body.style.overflow = 'auto'
-    }
-  }, [isSidebarToggled])
+  useLockBodyOverflow(isSidebarToggled)
 
   return (
-    <div className={classes.sidebar}>
+    <div className={classes.sidebar} ref={sidebarRef}>
       <MdClose className={classes.closeIcon} onClick={handleSidebar} />
       <Links
         wrapperClass={classes.sidebarLinks}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function OutsideClick(ref) {
+const useDetectOutsideClick = (ref) => {
   const [isClicked, setIsClicked] = useState();
   useEffect(() => {
     function handleClickOutside(event) {
@@ -19,4 +19,4 @@ function OutsideClick(ref) {
   return isClicked;
 }
 
-export default OutsideClick
+export { useDetectOutsideClick }

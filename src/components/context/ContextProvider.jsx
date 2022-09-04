@@ -9,8 +9,12 @@ const ContextProvider = ({ children }) => {
     setIsSidebarToggled(value)
   )
 
-  const handleSidebar = () => {
-    setIsSidebarToggledCallback(!isSidebarToggled)
+  const handleSidebar = async () => {
+    try {
+      await setIsSidebarToggledCallback(!isSidebarToggled)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   const data = {
