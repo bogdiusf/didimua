@@ -14,11 +14,9 @@ const PageContainerStyles = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
     gap: 20,
     minHeight: 'calc(100vh - 325px)',
-    padding: [50, 0],
 
     '& > *': {
       animation: '$fadeInAnimation ease-in-out 0.5s',
