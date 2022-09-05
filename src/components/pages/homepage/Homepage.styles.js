@@ -56,6 +56,12 @@ const HomepageStyles = {
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
+  },
+
+  mapContainer: {
+    margin: [0, 'auto'],
+    width: '100%',
+    height: '70vh'
   }
 }
 

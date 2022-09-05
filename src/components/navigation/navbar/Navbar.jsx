@@ -1,7 +1,8 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { createUseStyles } from 'react-jss'
 import { useLockNavScroll } from '../../utils/hooks/useLockNavScroll'
+import { useScrollToTop } from '../../utils/hooks/useScrollToTop'
 import TextLoop from 'react-text-loop'
 import { MdMenu } from 'react-icons/md'
 import { Context } from '../../context/Context'
@@ -13,8 +14,7 @@ import brandLogo from '../../../assets/1717679-200.png'
 const useStyles = createUseStyles(NavbarStyles)
 
 const Navbar = () => {
-  const { isSidebarToggled, setIsSidebarToggledCallback, handleSidebar } =
-    useContext(Context)
+  const { isSidebarToggled, handleSidebar } = useContext(Context)
   const [isNavSticky, setIsNavSticky] = useState(false)
   const currentPath = useLocation()
 
@@ -55,7 +55,13 @@ const Navbar = () => {
         </div>
         <div className={classes.navRightSide}>
           <Links wrapperClass={classes.navLinks} path={currentPath.pathname} />
-          <MdMenu onClick={handleSidebar} className={classes.menuIcon} />
+          <MdMenu
+            onClick={() => {
+              handleSidebar()
+              useScrollToTop()
+            }}
+            className={classes.menuIcon}
+          />
         </div>
       </nav>
 

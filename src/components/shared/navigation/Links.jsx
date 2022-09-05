@@ -14,7 +14,7 @@ const Links = ({ wrapperClass, isSidebarToggled = false, handleSidebar }) => {
 
   const handleLinkClick = (path) => {
     navigateTo(path)
-    handleSidebar()
+    isSidebarToggled && handleSidebar()
   }
 
   const filteredRoutesArray = RoutesData().filter(
