@@ -1,8 +1,8 @@
 const MapStyles = {
   mapContainer: {
     margin: [0, 'auto'],
-    width: '80%',
-    height: '50vw',
+    width: 400,
+    height: 400,
     marginBottom: 50,
 
     '@media screen and (max-width: 500px)': {

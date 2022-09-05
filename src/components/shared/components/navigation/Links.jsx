@@ -4,10 +4,12 @@ import RoutesData from '../../../routes/RoutesData'
 import { createUseStyles } from 'react-jss'
 import { defaultLinkStyles } from './Links.styles'
 
+import { MdHome, MdArrowForwardIos } from 'react-icons/md'
+
 const useStyles = createUseStyles(defaultLinkStyles)
 
 const Links = ({ wrapperClass, isSidebarToggled = false, handleSidebar }) => {
-  const classes = useStyles()
+  const classes = useStyles({ isSidebarToggled })
 
   const navigateTo = useNavigate()
   const currentLocation = useLocation()
@@ -35,7 +37,8 @@ const Links = ({ wrapperClass, isSidebarToggled = false, handleSidebar }) => {
               : classes.defaultLink
           }
         >
-          {'/home'}
+          <MdHome />
+          <span>home</span>
         </div>
       )}
       {filteredRoutesArray.map((route, index) => {
@@ -47,7 +50,11 @@ const Links = ({ wrapperClass, isSidebarToggled = false, handleSidebar }) => {
             onClick={() => handleLinkClick(route.path)}
             className={`${classes.defaultLink} ${activeLinkClass}`}
           >
-            {route.path === '/' ? '/home' : route.path}
+            {route.icon}
+            {!isSidebarToggled && <MdArrowForwardIos />}
+            {route.path === '/'
+              ? '/home'
+              : route.path.substring(1, route.path.length)}
           </div>
         )
       })}

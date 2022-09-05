@@ -1,6 +1,6 @@
-import { lazy, useContext } from 'react'
+import { lazy } from 'react'
 import { Navigate } from 'react-router-dom'
-import { Context } from '../context/Context'
+import { MdHome, MdWork, MdInfo, MdContactPage } from 'react-icons/md'
 
 function RoutesData() {
   const Homepage = lazy(() => import('../pages/homepage/Homepage'))
@@ -12,19 +12,23 @@ function RoutesData() {
   const routes = [
     {
       path: '/',
-      component: <Homepage />
+      component: <Homepage />,
+      icon: <MdHome />
     },
     {
       path: '/work',
-      component: <MyWork />
+      component: <MyWork />,
+      icon: <MdWork />
     },
     {
       path: '/about',
-      component: <AboutMe />
+      component: <AboutMe />,
+      icon: <MdInfo />
     },
     {
       path: '/contact',
-      component: <ContactMe />
+      component: <ContactMe />,
+      icon: <MdContactPage />
     },
     {
       path: '/page-not-found',
