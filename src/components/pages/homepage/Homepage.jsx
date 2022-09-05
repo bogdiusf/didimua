@@ -1,6 +1,4 @@
-import React, { useContext, useMemo } from 'react'
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api'
-import { useNavigate } from 'react-router-dom'
+import React, { useContext } from 'react'
 import { Context } from '../../context/Context'
 import { createUseStyles } from 'react-jss'
 import HomepageStyles from './Homepage.styles'
@@ -15,27 +13,16 @@ import banner2 from '../../../assets/carousel/eye-shadow-4558443_1920.jpg'
 import banner3 from '../../../assets/carousel/woman-438434_1920.jpg'
 import banner4 from '../../../assets/carousel/woman-5443384_1920.jpg'
 
+import GMap from '../../google-map/GMap'
+
 const AutoplaySlider = withAutoplay(AwesomeSlider)
 
 const useStyles = createUseStyles(HomepageStyles)
-
-const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 
 function Homepage() {
   const { isSidebarToggled } = useContext(Context)
 
   const classes = useStyles({ isSidebarToggled })
-
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: API_KEY
-  })
-
-  const navigateTo = useNavigate()
-
-  const shopCoordinates = useMemo(() => ({
-    lat: 46.179021672224685,
-    lng: 21.34059981381673
-  }))
 
   return (
     <div className={classes.homepageContainer}>
@@ -66,23 +53,7 @@ function Homepage() {
         </section>
 
         <section style={{ display: 'grid', placeItems: 'center' }}>
-          {isLoaded && (
-            <div
-              style={{
-                padding: 20,
-                width: '90%',
-                margin: [0, 'auto']
-              }}
-            >
-              <GoogleMap
-                zoom={15}
-                center={shopCoordinates}
-                mapContainerClassName={classes.mapContainer}
-              >
-                <Marker position={shopCoordinates} />
-              </GoogleMap>
-            </div>
-          )}
+          {/* <GMap /> */}
         </section>
       </main>
     </div>

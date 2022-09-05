@@ -57,12 +57,6 @@ const HomepageStyles = {
     justifyContent: 'space-around',
     alignItems: 'center',
   },
-
-  mapContainer: {
-    margin: [0, 'auto'],
-    width: '100%',
-    height: '70vh'
-  }
 }
 
 export default HomepageStyles
