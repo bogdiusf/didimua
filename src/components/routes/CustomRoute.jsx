@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../context/Context'
-import Loading from '../pages/loader/Loading'
+import Loading from '../common/loader/Loading'
 
 const CustomRoute = ({ path, element }) => {
   const { isLoading, setIsLoading } = useContext(Context)

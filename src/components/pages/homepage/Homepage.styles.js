@@ -1,29 +1,7 @@
 const HomepageStyles = {
-  '@keyframes fadeInAnimation': {
-    '0%': {
-      opacity: 0
-    },
-    '100%': {
-      opacity: 1
-    }
+  header: {
+    width: '100%'
   },
-  homepageContainer: ({ isSidebarToggled }) => ({
-    transition: 'opacity 0.5s ease-in-out',
-    opacity: isSidebarToggled ? 0.3 : 1,
-    pointerEvents: isSidebarToggled ? 'none' : 'auto',
-    minHeight: '100vh',
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'relative',
-
-    '& > *': {
-      animation: '$fadeInAnimation ease-in-out 1.5s',
-      animationIterationCount: 1,
-      animationFillMode: 'forwards',
-
-    },
-  }),
 
   sliderContainer: {
     '& .awssld__wrapper': {
@@ -51,12 +29,12 @@ const HomepageStyles = {
   },
 
   homepageBody: {
-    height: 300,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
+    width: '100%',
   },
 }
 
-export default HomepageStyles
+export { HomepageStyles }

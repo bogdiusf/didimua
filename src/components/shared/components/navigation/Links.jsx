@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import RoutesData from '../../routes/RoutesData'
+import RoutesData from '../../../routes/RoutesData'
 import { createUseStyles } from 'react-jss'
 import { defaultLinkStyles } from './Links.styles'
 

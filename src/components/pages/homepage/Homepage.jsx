@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { Context } from '../../context/Context'
 import { createUseStyles } from 'react-jss'
-import HomepageStyles from './Homepage.styles'
+import { PageContainerStyles } from '../../shared/styles/PageContainer.styles'
+import { HomepageStyles } from './Homepage.styles'
 
 import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
@@ -13,22 +14,22 @@ import banner2 from '../../../assets/carousel/eye-shadow-4558443_1920.jpg'
 import banner3 from '../../../assets/carousel/woman-438434_1920.jpg'
 import banner4 from '../../../assets/carousel/woman-5443384_1920.jpg'
 
-import GMap from '../../google-map/GMap'
-
 const AutoplaySlider = withAutoplay(AwesomeSlider)
 
-const useStyles = createUseStyles(HomepageStyles)
+const useCommonStyles = createUseStyles(PageContainerStyles)
+const useLocalStyles = createUseStyles(HomepageStyles)
 
 function Homepage() {
   const { isSidebarToggled } = useContext(Context)
 
-  const classes = useStyles({ isSidebarToggled })
+  const commonClasses = useCommonStyles({ isSidebarToggled })
+  const localClasses = useLocalStyles()
 
   return (
-    <div className={classes.homepageContainer}>
-      <header>
+    <div className={commonClasses.pageContainer}>
+      <header className={localClasses.header}>
         <AutoplaySlider
-          className={classes.sliderContainer}
+          className={localClasses.sliderContainer}
           play={true}
           cancelOnInteraction={false}
           interval={5000}
@@ -44,17 +45,9 @@ function Homepage() {
           <div data-src={banner4} data-attr="banner-image"></div>
         </AutoplaySlider>
       </header>
-      <main>
-        <section className={classes.homepageBody}>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-        </section>
 
-        <section style={{ display: 'grid', placeItems: 'center' }}>
-          <GMap />
-        </section>
+      <main>
+        <div>Body of homepage</div>
       </main>
     </div>
   )

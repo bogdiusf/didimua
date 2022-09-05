@@ -7,9 +7,6 @@ const FooterStyles = {
     placeItems: 'center',
     textTransform: 'uppercase',
     textDecoration: 'underline',
-    // position: 'absolute',
-    top: '100vh',
-    bottom: 0
   }
 
 }

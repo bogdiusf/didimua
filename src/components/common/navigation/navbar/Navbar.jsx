@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { createUseStyles } from 'react-jss'
-import { useLockNavScroll } from '../../utils/hooks/useLockNavScroll'
-import { useScrollToTop } from '../../utils/hooks/useScrollToTop'
+import { useLockNavScroll } from '../../../utils/hooks/useLockNavScroll'
+import { useScrollToTop } from '../../../utils/hooks/useScrollToTop'
 import TextLoop from 'react-text-loop'
 import { MdMenu } from 'react-icons/md'
-import { Context } from '../../context/Context'
+import { Context } from '../../../context/Context'
 import Sidebar from '../sidebar/Sidebar'
-import Links from '../../shared/navigation/Links'
+import Links from '../../../shared/components/navigation/Links'
 import NavbarStyles from './Navbar.styles'
-import brandLogo from '../../../assets/1717679-200.png'
+import brandLogo from '../../../../assets/1717679-200.png'
 
 const useStyles = createUseStyles(NavbarStyles)
 

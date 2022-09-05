@@ -1,10 +1,10 @@
 import { Suspense, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import RoutesData from './RoutesData'
-import Navbar from '../navigation/navbar/Navbar'
+import Navbar from '../common/navigation/navbar/Navbar'
 import CustomRoute from './CustomRoute'
 
-const Footer = lazy(() => import('../footer/Footer'))
+const Footer = lazy(() => import('../common/footer/Footer'))
 
 export default function NavbarRoutes() {
   return (

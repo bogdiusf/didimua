@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { Context } from '../../context/Context'
 import { createUseStyles } from 'react-jss'
-import AboutStyles from './About.styles'
+import { PageContainerStyles } from '../../shared/styles/PageContainer.styles'
 
-const useStyles = createUseStyles(AboutStyles)
+const useStyles = createUseStyles(PageContainerStyles)
 
 const About = () => {
   const { isSidebarToggled } = useContext(Context)
@@ -11,7 +11,43 @@ const About = () => {
   const classes = useStyles({ isSidebarToggled })
 
   return (
-    <div className={classes.aboutContainer}>
+    <div className={classes.pageContainer}>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
+      <div>About</div>
       <div>About</div>
     </div>
   )
