@@ -53,7 +53,7 @@ function Homepage() {
         </section>
 
         <section style={{ display: 'grid', placeItems: 'center' }}>
-          {/* <GMap /> */}
+          <GMap />
         </section>
       </main>
     </div>
