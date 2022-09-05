@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { createUseStyles } from 'react-jss'
 import { MdClose } from 'react-icons/md'
 import Links from '../../../shared/components/navigation/Links'
-import { useLockBodyOverflow } from '../../../utils/hooks/useLockBodyOverflow'
+import { useLockBodyOverflow } from '../../../../utils/hooks/useLockBodyOverflow'
 // import { useDetectOutsideClick } from '../../utils/hooks/useDetectOutsideClick'
 import SidebarStyles from './Sidebar.styles'
 
