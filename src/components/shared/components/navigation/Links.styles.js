@@ -30,10 +30,6 @@ const defaultLinkStyles = {
 
     ...(isSidebarToggled && {
       '& svg': { fontSize: 20, },
-      '& svg:not(:first-child)': {
-
-        animation: '$bounce 2s infinite',
-      }
     }),
 
     '@media screen and (min-width: 768px)': {
@@ -63,12 +59,12 @@ const defaultLinkStyles = {
 
   focusedLink: {
     '@media screen and (min-width: 768px)': {
-      color: '#fd905f',
+      color: '#fd905f !important',
       '&::after': {
         content: '""',
         position: 'absolute',
         width: '100%',
-        transform: 'scaleX(1)',
+        transform: 'scaleX(1) !important',
         height: 2,
         bottom: 0,
         left: 0,

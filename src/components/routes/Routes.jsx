@@ -23,7 +23,6 @@ export default function NavbarRoutes() {
             />
           ))}
         </Routes>
-        <Footer />
       </Suspense>
     </>
   )

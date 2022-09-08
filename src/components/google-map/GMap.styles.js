@@ -1,6 +1,6 @@
 const MapStyles = {
   mapContainer: {
-    margin: [0, 'auto'],
+    // margin: [0, 'auto'],
     width: 400,
     height: 400,
     marginBottom: 50,

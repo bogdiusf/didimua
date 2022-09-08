@@ -16,7 +16,8 @@ const PageContainerStyles = {
     flexDirection: 'column',
     alignItems: 'center',
     gap: 20,
-    minHeight: 'calc(100vh - 325px)',
+    minHeight: '100vh',
+    '& main, header': { width: '100%' },
 
     '& > *': {
       animation: '$fadeInAnimation ease-in-out 0.5s',

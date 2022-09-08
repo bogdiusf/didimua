@@ -1,56 +1,21 @@
-import React, { useContext } from 'react'
-import { Context } from '../../context/Context'
-import { createUseStyles } from 'react-jss'
-import { PageContainerStyles } from '../../shared/styles/PageContainer.styles'
+import React from 'react'
+import TemplatePage from '../../common/TemplatePage'
 
-const useStyles = createUseStyles(PageContainerStyles)
+const Header = () => (
+  <header>
+    <h1>About</h1>
+    <div>This page is about myself</div>
+  </header>
+)
+
+const Main = () => (
+  <main>
+    <div>Insert pictures here</div>
+  </main>
+)
 
 const About = () => {
-  const { isSidebarToggled } = useContext(Context)
-
-  const classes = useStyles({ isSidebarToggled })
-
-  return (
-    <div className={classes.pageContainer}>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-      <div>About</div>
-    </div>
-  )
+  return <TemplatePage header={<Header />} main={<Main />} />
 }
 
 export default About

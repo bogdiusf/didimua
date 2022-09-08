@@ -1,20 +1,16 @@
-import React, { useContext } from 'react'
-import { Context } from '../../context/Context'
-import { createUseStyles } from 'react-jss'
+import React from 'react'
+import TemplatePage from '../../common/TemplatePage'
 import _404Styles from './404.styles'
 
-const useStyles = createUseStyles(_404Styles)
+const Header = () => (
+  <header>
+    <h1>404</h1>
+    <div>Page not found - check url</div>
+  </header>
+)
 
 const _404 = () => {
-  const { isSidebarToggled } = useContext(Context)
-
-  const classes = useStyles({ isSidebarToggled })
-
-  return (
-    <div className={classes._404Container}>
-      <div>Page not found - check url</div>
-    </div>
-  )
+  return <TemplatePage header={<Header />} />
 }
 
 export default _404

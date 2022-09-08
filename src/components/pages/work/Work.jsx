@@ -1,20 +1,24 @@
-import React, { useContext } from 'react'
-import { Context } from '../../context/Context'
-import { createUseStyles } from 'react-jss'
-import WorkStyles from './Work.styles'
+import React from 'react'
+import TemplatePage from '../../common/TemplatePage'
 
-const useStyles = createUseStyles(WorkStyles)
+const Header = () => (
+  <header>
+    <h1>My work</h1>
+    <div>This page is about the work that I do</div>
+  </header>
+)
+
+const Main = () => (
+  <main>
+    <div>
+      Insert pictures and text here. Decide whether to use card like styling or
+      2n-1 elements with inversed order
+    </div>
+  </main>
+)
 
 const Work = () => {
-  const { isSidebarToggled } = useContext(Context)
-
-  const classes = useStyles({ isSidebarToggled })
-
-  return (
-    <div className={classes.workContainer}>
-      <div>My work</div>
-    </div>
-  )
+  return <TemplatePage header={<Header />} main={<Main />} />
 }
 
 export default Work

@@ -1,7 +1,5 @@
-import React, { useContext } from 'react'
-import { Context } from '../../context/Context'
+import React from 'react'
 import { createUseStyles } from 'react-jss'
-import { PageContainerStyles } from '../../shared/styles/PageContainer.styles'
 import { HomepageStyles } from './Homepage.styles'
 
 import AwesomeSlider from 'react-awesome-slider'
@@ -13,44 +11,40 @@ import banner1 from '../../../assets/carousel/brush-791306_1920.jpg'
 import banner2 from '../../../assets/carousel/eye-shadow-4558443_1920.jpg'
 import banner3 from '../../../assets/carousel/woman-438434_1920.jpg'
 import banner4 from '../../../assets/carousel/woman-5443384_1920.jpg'
+import TemplatePage from '../../common/TemplatePage'
 
 const AutoplaySlider = withAutoplay(AwesomeSlider)
+const useStyles = createUseStyles(HomepageStyles)
 
-const useCommonStyles = createUseStyles(PageContainerStyles)
-const useLocalStyles = createUseStyles(HomepageStyles)
-
-function Homepage() {
-  const { isSidebarToggled } = useContext(Context)
-
-  const commonClasses = useCommonStyles({ isSidebarToggled })
-  const localClasses = useLocalStyles()
+const Header = () => {
+  const headerClasses = useStyles()
 
   return (
-    <div className={commonClasses.pageContainer}>
-      <header className={localClasses.header}>
-        <AutoplaySlider
-          className={localClasses.sliderContainer}
-          play={true}
-          cancelOnInteraction={false}
-          interval={5000}
-          bullets={false}
-          mobileTouch={true}
-          organicArrows={false}
-          animation="scaleOutAnimation"
-          buttons={false}
-        >
-          <div data-src={banner1} data-attr="banner-image"></div>
-          <div data-src={banner2} data-attr="banner-image"></div>
-          <div data-src={banner3} data-attr="banner-image"></div>
-          <div data-src={banner4} data-attr="banner-image"></div>
-        </AutoplaySlider>
-      </header>
-
-      <main>
-        <div>Body of homepage</div>
-      </main>
-    </div>
+    <header className={headerClasses.header}>
+      <AutoplaySlider
+        className={headerClasses.sliderContainer}
+        play={true}
+        cancelOnInteraction={false}
+        interval={5000}
+        bullets={false}
+        mobileTouch={true}
+        organicArrows={false}
+        animation="scaleOutAnimation"
+        buttons={false}
+      >
+        <div data-src={banner1} data-attr="banner-image"></div>
+        <div data-src={banner2} data-attr="banner-image"></div>
+        <div data-src={banner3} data-attr="banner-image"></div>
+        <div data-src={banner4} data-attr="banner-image"></div>
+      </AutoplaySlider>
+    </header>
   )
+}
+
+const Main = () => <main>This is the body of the homepage</main>
+
+function Homepage() {
+  return <TemplatePage header={<Header />} main={<Main />} />
 }
 
 export default Homepage

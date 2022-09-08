@@ -27,14 +27,6 @@ const HomepageStyles = {
       color: 'red',
     }
   },
-
-  homepageBody: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    width: '100%',
-  },
 }
 
 export { HomepageStyles }
