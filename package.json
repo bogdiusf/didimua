@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Filipovici Bogdan",
+    "email": "bogdiusf@gmail.com",
+    "repository": "https://github.com/bogdiusf/didimua"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,6 +20,7 @@
     "react-awesome-slider": "^4.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+    "react-intersection-observer": "^9.4.0",
     "react-jss": "^10.9.2",
     "react-router-dom": "^6.3.0",
     "react-text-loop": "^2.3.0"

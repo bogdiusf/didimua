@@ -19,7 +19,7 @@ const PageContainerStyles = {
     minHeight: '100vh',
     '& main, header': { width: '100%' },
 
-    '& > *': {
+    '& header, main': {
       animation: '$fadeInAnimation ease-in-out 0.5s',
       animationIterationCount: 1,
       animationFillMode: 'forwards',

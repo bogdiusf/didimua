@@ -16,6 +16,7 @@ const TemplatePage = ({ header, main }) => {
       {header}
       {main}
       <button
+        // test button
         style={{ position: 'fixed', right: 100, top: '70%', zIndex: 10000 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >

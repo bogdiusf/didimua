@@ -1,13 +1,27 @@
 const FooterStyles = {
-  footerContainer: {
+  '@keyframes fadeInAnimation': {
+    '0%': {
+      opacity: 0
+    },
+    '100%': {
+      opacity: 1
+    }
+  },
+
+  footerContainer: ({ isFooterVisible }) => ({
     height: 450,
-    backgroundColor: '#fd905f',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     position: 'absolute',
-    top: '100%'
-  },
+    top: '100%',
+    ...(isFooterVisible && {
+      animation: '$fadeInAnimation ease-in-out 1s',
+      animationIterationCount: 1,
+      animationFillMode: 'forwards'
+    })
+
+  }),
   footerQuote: {
     height: 150,
     width: '100%'
@@ -18,6 +32,8 @@ const FooterStyles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#fd905f',
+
   }
 
 }
