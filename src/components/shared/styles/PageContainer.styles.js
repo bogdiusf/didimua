@@ -16,7 +16,7 @@ const PageContainerStyles = {
     flexDirection: 'column',
     alignItems: 'center',
     gap: 20,
-    minHeight: '100vh',
+    minHeight: '200vh',
     '& main, header': { width: '100%' },
 
     '& header, main': {

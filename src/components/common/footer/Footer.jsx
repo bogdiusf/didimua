@@ -1,21 +1,19 @@
-import React, { useRef, useEffect, useContext } from 'react'
+import React, { useRef, useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import Quote from '../../pages/contact/Quote'
 import FooterStyles from './Footer.styles'
 import { useIntersectionObserverAnimation } from '../../../utils/hooks/useIntersectionObserverAnimation'
 
-import { Context } from '../../context/Context'
-
 const useStyles = createUseStyles(FooterStyles)
 
 const Footer = () => {
+  const [isFooterVisibile, setIsFooterVisibile] = useState(false)
+
   const footerRef = useRef()
 
-  const { isElementVisible, setIsElementVisibleCallback } = useContext(Context)
+  useIntersectionObserverAnimation(setIsFooterVisibile, [footerRef], 0.5)
 
-  useIntersectionObserverAnimation(setIsElementVisibleCallback, footerRef)
-
-  const classes = useStyles({ isElementVisible })
+  const classes = useStyles({ isFooterVisibile })
 
   return (
     <footer className={classes.footerContainer} ref={footerRef}>

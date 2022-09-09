@@ -10,10 +10,6 @@ const ContextProvider = ({ children }) => {
     setIsSidebarToggled(value)
   )
 
-  const setIsElementVisibleCallback = useCallback((value) =>
-    setIsElementVisible(value)
-  )
-
   const handleSidebar = async () => {
     try {
       await setIsSidebarToggledCallback(!isSidebarToggled)
@@ -27,10 +23,7 @@ const ContextProvider = ({ children }) => {
     setIsSidebarToggled,
     handleSidebar,
     isLoading,
-    setIsLoading,
-    setIsSidebarToggledCallback,
-    isElementVisible,
-    setIsElementVisibleCallback
+    setIsLoading
   }
 
   return <Context.Provider value={data}>{children}</Context.Provider>

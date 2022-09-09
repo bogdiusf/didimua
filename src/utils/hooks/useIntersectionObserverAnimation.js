@@ -1,17 +1,16 @@
 import { useEffect } from 'react'
 
-const useIntersectionObserverAnimation = (setIsElementVisibleCallback, ref) => {
+const useIntersectionObserverAnimation = (setIsElementVisibleCallback, refs, threshold) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0]
-        setIsElementVisibleCallback(entry.isIntersecting)
-      },
+      (entries) =>
+        entries.forEach((entry) => setIsElementVisibleCallback(entry.isIntersecting)),
       {
-        threshold: 0.5
+        threshold: threshold
       }
     )
-    observer.observe(ref.current)
+    refs.forEach(ref => observer.observe(ref.current))
+
   }, [])
 }
 

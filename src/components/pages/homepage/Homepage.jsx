@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import { HomepageStyles } from './Homepage.styles'
 
@@ -15,6 +15,8 @@ import banner4 from '../../../assets/carousel/woman-5443384_1920.jpg'
 import pic1 from '../../../assets/pic1.jpg'
 import pic2 from '../../../assets/pic2.jpg'
 import pic3 from '../../../assets/pic3.jpg'
+
+import { useIntersectionObserverAnimation } from '../../../utils/hooks/useIntersectionObserverAnimation'
 
 import TemplatePage from '../../common/TemplatePage'
 
@@ -47,12 +49,42 @@ const Header = () => {
 }
 
 const Main = () => {
+  const [isImgVisibile, setIsImgVisibile] = useState(false)
+  const [isDivVisibile, setIsDivVisibile] = useState(false)
+
+  const imgRef = useRef()
+  const penisRef = useRef()
+
+  useIntersectionObserverAnimation(setIsImgVisibile, [imgRef], 0.3)
+  useIntersectionObserverAnimation(setIsDivVisibile, [penisRef], 0.7)
+
   const mainClasses = useStyles()
+
   return (
     <main>
-      <img src={pic1} alt="pic1" className={mainClasses.images} />
-      <img src={pic2} alt="pic2" className={mainClasses.images} />
-      <img src={pic3} alt="pic3" className={mainClasses.images} />
+      <section>
+        <img
+          alt="test-picture"
+          src={pic1}
+          ref={imgRef}
+          className={`${mainClasses.imgDefault} ${
+            isImgVisibile ? mainClasses.imgShow : ''
+          }`}
+        />
+      </section>
+
+      <section>
+        <div
+          ref={penisRef}
+          className={`${mainClasses.divDefault} ${
+            isDivVisibile ? mainClasses.divShow : ''
+          }`}
+        >
+          Intersection Observer test - static implementation - not optimal at
+          all. Problems with calling observer hook with dynamic data, due to
+          unresolved element uniqueness problems
+        </div>
+      </section>
     </main>
   )
 }
