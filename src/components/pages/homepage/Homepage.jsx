@@ -11,6 +11,11 @@ import banner1 from '../../../assets/carousel/brush-791306_1920.jpg'
 import banner2 from '../../../assets/carousel/eye-shadow-4558443_1920.jpg'
 import banner3 from '../../../assets/carousel/woman-438434_1920.jpg'
 import banner4 from '../../../assets/carousel/woman-5443384_1920.jpg'
+
+import pic1 from '../../../assets/pic1.jpg'
+import pic2 from '../../../assets/pic2.jpg'
+import pic3 from '../../../assets/pic3.jpg'
+
 import TemplatePage from '../../common/TemplatePage'
 
 const AutoplaySlider = withAutoplay(AwesomeSlider)
@@ -41,7 +46,16 @@ const Header = () => {
   )
 }
 
-const Main = () => <main>This is the body of the homepage</main>
+const Main = () => {
+  const mainClasses = useStyles()
+  return (
+    <main>
+      <img src={pic1} alt="pic1" className={mainClasses.images} />
+      <img src={pic2} alt="pic2" className={mainClasses.images} />
+      <img src={pic3} alt="pic3" className={mainClasses.images} />
+    </main>
+  )
+}
 
 function Homepage() {
   return <TemplatePage header={<Header />} main={<Main />} />

@@ -3,10 +3,15 @@ import { Context } from './Context'
 
 const ContextProvider = ({ children }) => {
   const [isSidebarToggled, setIsSidebarToggled] = useState(false)
+  const [isElementVisible, setIsElementVisible] = useState()
   const [isLoading, setIsLoading] = useState(false)
 
   const setIsSidebarToggledCallback = useCallback((value) =>
     setIsSidebarToggled(value)
+  )
+
+  const setIsElementVisibleCallback = useCallback((value) =>
+    setIsElementVisible(value)
   )
 
   const handleSidebar = async () => {
@@ -23,7 +28,9 @@ const ContextProvider = ({ children }) => {
     handleSidebar,
     isLoading,
     setIsLoading,
-    setIsSidebarToggledCallback
+    setIsSidebarToggledCallback,
+    isElementVisible,
+    setIsElementVisibleCallback
   }
 
   return <Context.Provider value={data}>{children}</Context.Provider>

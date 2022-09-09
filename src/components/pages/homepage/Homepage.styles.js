@@ -27,6 +27,10 @@ const HomepageStyles = {
       color: 'red',
     }
   },
+
+  images: {
+    width: '100%',
+  }
 }
 
 export { HomepageStyles }

@@ -1,25 +1,24 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useContext } from 'react'
 import { createUseStyles } from 'react-jss'
 import Quote from '../../pages/contact/Quote'
 import FooterStyles from './Footer.styles'
-import { useInView } from 'react-intersection-observer'
+import { useIntersectionObserverAnimation } from '../../../utils/hooks/useIntersectionObserverAnimation'
+
+import { Context } from '../../context/Context'
 
 const useStyles = createUseStyles(FooterStyles)
 
 const Footer = () => {
-  const { ref: footerRef, inView: isFooterVisible } = useInView({
-    threshold: 0.5
-  })
-  const classes = useStyles({ isFooterVisible })
+  const footerRef = useRef()
 
-  console.log(isFooterVisible)
+  const { isElementVisible, setIsElementVisibleCallback } = useContext(Context)
+
+  useIntersectionObserverAnimation(setIsElementVisibleCallback, footerRef)
+
+  const classes = useStyles({ isElementVisible })
 
   return (
-    <footer
-      className={classes.footerContainer}
-      ref={footerRef}
-      style={{ visibility: isFooterVisible ? 'visible' : 'hidden' }}
-    >
+    <footer className={classes.footerContainer} ref={footerRef}>
       <div className={classes.footerQuote}>
         <Quote />
       </div>

@@ -5,22 +5,18 @@ const FooterStyles = {
     },
     '100%': {
       opacity: 1
-    }
+    },
   },
 
-  footerContainer: ({ isFooterVisible }) => ({
+  footerContainer: ({ isElementVisible }) => ({
     height: 450,
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     position: 'absolute',
     top: '100%',
-    ...(isFooterVisible && {
-      animation: '$fadeInAnimation ease-in-out 1s',
-      animationIterationCount: 1,
-      animationFillMode: 'forwards'
-    })
-
+    opacity: isElementVisible ? 1 : 0,
+    transition: isElementVisible ? 'all 750ms ease-in-out' : 'all 500ms ease-in-out'
   }),
   footerQuote: {
     height: 150,
