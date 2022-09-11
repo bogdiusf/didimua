@@ -55,16 +55,20 @@ const Main = () => {
   const imgRef = useRef()
   const penisRef = useRef()
 
-  useIntersectionObserverAnimation(setIsImgVisibile, [imgRef], 0.3)
-  useIntersectionObserverAnimation(setIsDivVisibile, [penisRef], 0.7)
+  useIntersectionObserverAnimation(setIsImgVisibile, [imgRef], 0.5)
+  useIntersectionObserverAnimation(setIsDivVisibile, [penisRef], 1)
 
   const mainClasses = useStyles()
 
   return (
     <main>
-      <section>
+      <section
+        style={{ height: 'auto', width: '100%', backgroundSize: 'cover' }}
+      >
+        <img alt="test-picture1" src={pic1} className={mainClasses.imgShow} />
+
         <img
-          alt="test-picture"
+          alt="test-picture2"
           src={pic1}
           ref={imgRef}
           className={`${mainClasses.imgDefault} ${

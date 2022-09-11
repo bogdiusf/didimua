@@ -35,6 +35,7 @@ const HomepageStyles = {
   },
 
   imgShow: {
+    width: '100%',
     opacity: 1,
     transition: 'all 750ms ease-in-out'
   },
