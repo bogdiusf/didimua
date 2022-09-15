@@ -25,6 +25,18 @@ body,
   box-sizing: border-box;
 }
 
+.show {
+  opacity: 1 !important;
+  filter: blur(0) !important;
+  transform: translateX(0) !important;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

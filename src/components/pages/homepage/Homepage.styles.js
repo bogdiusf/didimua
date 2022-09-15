@@ -31,13 +31,14 @@ const HomepageStyles = {
   imgDefault: {
     width: '100%',
     opacity: 0,
-    transition: 'all 500ms ease-in-out'
+    filter: 'blur(5px)',
+    transform: 'translateX(-100%)',
+    transition: 'all 1s'
   },
 
   imgShow: {
     width: '100%',
-    opacity: 1,
-    transition: 'all 750ms ease-in-out'
+
   },
 
   divDefault: {
@@ -52,12 +53,16 @@ const HomepageStyles = {
     color: 'white',
     backgroundColor: 'black',
     opacity: 0,
-    transition: 'all 500ms ease-in-out'
+    filter: 'blur(5px)',
+    transform: 'translateX(-100%)',
+    transition: 'all 1s'
   },
-  divShow: {
+  show: {
+    width: '100%',
     opacity: 1,
-    transition: 'all 750ms ease-in-out'
-  }
+    filter: 'blur(0)',
+    transform: 'translateX(0)',
+  },
 }
 
 export { HomepageStyles }

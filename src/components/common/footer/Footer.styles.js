@@ -8,16 +8,18 @@ const FooterStyles = {
     },
   },
 
-  footerContainer: ({ isFooterVisibile }) => ({
+  footerContainer: {
     height: 450,
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     position: 'absolute',
     top: '100%',
-    opacity: isFooterVisibile ? 1 : 0,
-    transition: isFooterVisibile ? 'all 750ms ease-in-out' : 'all 500ms ease-in-out'
-  }),
+    opacity: 0,
+    filter: 'blur(5px)',
+    transform: 'translateX(-100%)',
+    transition: 'all 1s'
+  },
   footerQuote: {
     height: 150,
     width: '100%'

@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect } from 'react'
 import { createUseStyles } from 'react-jss'
 import { HomepageStyles } from './Homepage.styles'
+import { Context } from '../../context/Context'
 
 import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
@@ -13,8 +14,6 @@ import banner3 from '../../../assets/carousel/woman-438434_1920.jpg'
 import banner4 from '../../../assets/carousel/woman-5443384_1920.jpg'
 
 import pic1 from '../../../assets/pic1.jpg'
-import pic2 from '../../../assets/pic2.jpg'
-import pic3 from '../../../assets/pic3.jpg'
 
 import { useIntersectionObserverAnimation } from '../../../utils/hooks/useIntersectionObserverAnimation'
 
@@ -49,16 +48,13 @@ const Header = () => {
 }
 
 const Main = () => {
-  const [isImgVisibile, setIsImgVisibile] = useState(false)
-  const [isDivVisibile, setIsDivVisibile] = useState(false)
-
-  const imgRef = useRef()
-  const penisRef = useRef()
-
-  useIntersectionObserverAnimation(setIsImgVisibile, [imgRef], 0.5)
-  useIntersectionObserverAnimation(setIsDivVisibile, [penisRef], 1)
-
   const mainClasses = useStyles()
+  const observer = useIntersectionObserverAnimation()
+
+  useEffect(() => {
+    const elements = document.querySelectorAll('#intersection-observer')
+    elements.forEach((el) => observer.observe(el))
+  }, [])
 
   return (
     <main>
@@ -70,20 +66,13 @@ const Main = () => {
         <img
           alt="test-picture2"
           src={pic1}
-          ref={imgRef}
-          className={`${mainClasses.imgDefault} ${
-            isImgVisibile ? mainClasses.imgShow : ''
-          }`}
+          className={mainClasses.imgDefault}
+          id="intersection-observer"
         />
       </section>
 
       <section>
-        <div
-          ref={penisRef}
-          className={`${mainClasses.divDefault} ${
-            isDivVisibile ? mainClasses.divShow : ''
-          }`}
-        >
+        <div className={mainClasses.divDefault} id="intersection-observer">
           Intersection Observer test - static implementation - not optimal at
           all. Problems with calling observer hook with dynamic data, due to
           unresolved element uniqueness problems

@@ -23,7 +23,9 @@ const ContextProvider = ({ children }) => {
     setIsSidebarToggled,
     handleSidebar,
     isLoading,
-    setIsLoading
+    setIsLoading,
+    isElementVisible,
+    setIsElementVisible
   }
 
   return <Context.Provider value={data}>{children}</Context.Provider>
