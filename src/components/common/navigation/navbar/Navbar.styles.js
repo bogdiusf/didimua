@@ -7,7 +7,7 @@ const NavbarStyles = {
       opacity: 1
     }
   },
-  navbar: ({ isSidebarToggled, isNavSticky }) => ({
+  navbar: ({ isSidebarToggled, isComponentSticky }) => ({
     backgroundColor: '#f8f8f8',
     padding: [20, '7.5%'],
     display: 'flex',
@@ -18,7 +18,7 @@ const NavbarStyles = {
     width: '100%',
     position: 'sticky',
     top: 0,
-    boxShadow: isNavSticky
+    boxShadow: isComponentSticky
       ? '0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%)'
       : 'none',
     zIndex: 1,

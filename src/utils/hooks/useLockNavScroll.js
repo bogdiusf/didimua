@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const useLockNavScroll = (setIsNavSticky) => {
+const useLockNavScroll = (setElement) => {
   useEffect(() => {
     window.addEventListener('scroll', stickNavbar)
     return () => window.removeEventListener('scroll', stickNavbar)
@@ -9,8 +9,7 @@ const useLockNavScroll = (setIsNavSticky) => {
   const stickNavbar = () => {
     if (window !== undefined) {
       let windowHeight = window.scrollY
-      // window height changed for the demo
-      windowHeight > 50 ? setIsNavSticky(true) : setIsNavSticky(false)
+      windowHeight > 50 ? setElement(true) : setElement(false)
     }
   }
 }

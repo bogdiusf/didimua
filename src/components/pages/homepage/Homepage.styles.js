@@ -1,33 +1,4 @@
 const HomepageStyles = {
-  header: {
-    width: '100%'
-  },
-
-  sliderContainer: {
-    '& .awssld__wrapper': {
-      width: '100%',
-      height: 500,
-      paddingBottom: 0,
-      '@media screen and (max-width: 768px)': {
-        height: 400
-      },
-      '@media screen and (max-width: 550px)': {
-        height: 300
-      },
-    },
-
-    '& .awssld__content': {
-      zIndex: 9
-    },
-
-    '& .awssld__content img': {
-      zIndex: -1,
-    },
-    '& div span': {
-      color: 'red',
-    }
-  },
-
   imgDefault: {
     width: '100%',
     opacity: 0,
@@ -37,8 +8,7 @@ const HomepageStyles = {
   },
 
   imgShow: {
-    width: '100%',
-
+    width: '100%'
   },
 
   divDefault: {
@@ -56,7 +26,7 @@ const HomepageStyles = {
     filter: 'blur(5px)',
     transform: 'translateX(-100%)',
     transition: 'all 1s'
-  },
+  }
 }
 
 export { HomepageStyles }
