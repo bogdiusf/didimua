@@ -8,14 +8,13 @@ const useStyles = createUseStyles(FooterStyles)
 
 const Footer = () => {
   const footerRef = useRef()
+  const classes = useStyles()
 
   const observer = useIntersectionObserverAnimation()
 
   useEffect(() => {
     observer.observe(footerRef.current)
   }, [])
-
-  const classes = useStyles()
 
   return (
     <footer className={classes.footerContainer} ref={footerRef}>

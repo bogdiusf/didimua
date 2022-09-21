@@ -1,20 +1,26 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { createUseStyles } from 'react-jss'
 import { useLockNavScroll } from '../../../../utils/hooks/useLockNavScroll'
 import { useScrollToTop } from '../../../../utils/hooks/useScrollToTop'
 import TextLoop from 'react-text-loop'
 import { MdMenu } from 'react-icons/md'
-import { Context } from '../../../context/Context'
 import Sidebar from '../sidebar/Sidebar'
 import Links from '../../../shared/components/navigation/Links'
 import NavbarStyles from './Navbar.styles'
 import brandLogo from '../../../../assets/1717679-200.png'
 
+import { useSelector, useDispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actions } from '../../../../redux/actions'
+
 const useStyles = createUseStyles(NavbarStyles)
 
 const Navbar = () => {
-  const { isSidebarToggled, handleSidebar } = useContext(Context)
+  const isSidebarToggled = useSelector((state) => state.isSidebarToggled)
+  const dispatch = useDispatch()
+  const { toggleSidebar } = bindActionCreators(actions, dispatch)
+
   const [isNavSticky, setIsNavSticky] = useState(false)
   const currentPath = useLocation()
 
@@ -57,7 +63,7 @@ const Navbar = () => {
           <Links wrapperClass={classes.navLinks} path={currentPath.pathname} />
           <MdMenu
             onClick={() => {
-              handleSidebar()
+              toggleSidebar()
               useScrollToTop()
             }}
             className={classes.menuIcon}
@@ -66,7 +72,7 @@ const Navbar = () => {
       </nav>
 
       <Sidebar
-        handleSidebar={handleSidebar}
+        toggleSidebar={toggleSidebar}
         isSidebarToggled={isSidebarToggled}
       />
     </>

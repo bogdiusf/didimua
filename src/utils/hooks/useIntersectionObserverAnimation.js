@@ -1,5 +1,4 @@
 const useIntersectionObserverAnimation = () => {
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -12,7 +11,6 @@ const useIntersectionObserverAnimation = () => {
       })
     }
   )
-
   return observer
 }
 

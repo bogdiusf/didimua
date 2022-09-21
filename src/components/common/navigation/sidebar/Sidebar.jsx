@@ -8,10 +8,8 @@ import SidebarStyles from './Sidebar.styles'
 
 const useStyles = createUseStyles(SidebarStyles)
 
-const Sidebar = ({ handleSidebar, isSidebarToggled }) => {
+const Sidebar = ({ toggleSidebar, isSidebarToggled }) => {
   const sidebarRef = useRef(null)
-
-  const classes = useStyles({ isSidebarToggled })
 
   // if (useDetectOutsideClick(sidebarRef)) {
   //   const handleSidebarPromise = new Promise((resolve) => {
@@ -21,14 +19,15 @@ const Sidebar = ({ handleSidebar, isSidebarToggled }) => {
   // }
 
   useLockBodyOverflow(isSidebarToggled)
+  const classes = useStyles({ isSidebarToggled })
 
   return (
     <div className={classes.sidebar} ref={sidebarRef}>
-      <MdClose className={classes.closeIcon} onClick={handleSidebar} />
+      <MdClose className={classes.closeIcon} onClick={toggleSidebar} />
       <Links
         wrapperClass={classes.sidebarLinks}
         isSidebarToggled={isSidebarToggled}
-        handleSidebar={handleSidebar}
+        toggleSidebar={toggleSidebar}
       />
     </div>
   )

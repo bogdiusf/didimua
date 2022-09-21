@@ -57,12 +57,6 @@ const HomepageStyles = {
     transform: 'translateX(-100%)',
     transition: 'all 1s'
   },
-  show: {
-    width: '100%',
-    opacity: 1,
-    filter: 'blur(0)',
-    transform: 'translateX(0)',
-  },
 }
 
 export { HomepageStyles }

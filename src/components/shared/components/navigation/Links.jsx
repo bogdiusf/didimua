@@ -8,7 +8,7 @@ import { MdHome, MdArrowForwardIos } from 'react-icons/md'
 
 const useStyles = createUseStyles(defaultLinkStyles)
 
-const Links = ({ wrapperClass, isSidebarToggled = false, handleSidebar }) => {
+const Links = ({ wrapperClass, isSidebarToggled = false, toggleSidebar }) => {
   const classes = useStyles({ isSidebarToggled })
 
   const navigateTo = useNavigate()
@@ -16,7 +16,7 @@ const Links = ({ wrapperClass, isSidebarToggled = false, handleSidebar }) => {
 
   const handleLinkClick = (path) => {
     navigateTo(path)
-    isSidebarToggled && handleSidebar()
+    isSidebarToggled && toggleSidebar()
   }
 
   const filteredRoutesArray = RoutesData().filter(

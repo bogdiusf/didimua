@@ -3,12 +3,20 @@ import { Context } from '../context/Context'
 import { createUseStyles } from 'react-jss'
 import { PageContainerStyles } from '../shared/styles/PageContainer.styles'
 
+import { useSelector, useDispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actions } from '../../redux/actions'
+
 const useStyles = createUseStyles(PageContainerStyles)
 
 import Footer from './footer/Footer'
 
 const TemplatePage = ({ header, main }) => {
-  const { isSidebarToggled } = useContext(Context)
+  const isSidebarToggled = useSelector((state) => state.toggleSidebar)
+  const dispatch = useDispatch()
+
+  const { toggleSidebar } = bindActionCreators(actions, dispatch)
+
   const classes = useStyles({ isSidebarToggled })
 
   return (

@@ -31,7 +31,6 @@ const FooterStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fd905f',
-
   }
 
 }

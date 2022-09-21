@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { createUseStyles } from 'react-jss'
 import { HomepageStyles } from './Homepage.styles'
-import { Context } from '../../context/Context'
 
 import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
@@ -58,11 +57,8 @@ const Main = () => {
 
   return (
     <main>
-      <section
-        style={{ height: 'auto', width: '100%', backgroundSize: 'cover' }}
-      >
+      <section>
         <img alt="test-picture1" src={pic1} className={mainClasses.imgShow} />
-
         <img
           alt="test-picture2"
           src={pic1}
