@@ -31,6 +31,7 @@ const PageContainerStyles = {
   }),
   scrollYProgress: {
     position: 'sticky',
+    width: '100vw',
     top: 119,
     zIndex: 9,
     height: 5,
