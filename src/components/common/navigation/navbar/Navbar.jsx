@@ -14,6 +14,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actions } from '../../../../redux/actions'
 
+import { motion } from 'framer-motion'
+
 const useStyles = createUseStyles(NavbarStyles)
 
 const Navbar = () => {
@@ -34,12 +36,17 @@ const Navbar = () => {
     <>
       <nav className={classes.navbar}>
         <div className={classes.navLeftSide}>
-          <img
-            src={brandLogo}
-            className={classes.brandLogo}
-            alt="brand-logo"
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 10 }}
             onClick={() => navigateTo('/')}
-          />
+          >
+            <img
+              src={brandLogo}
+              className={classes.brandLogo}
+              alt="brand-logo"
+            />
+          </motion.div>
           <div className={classes.logoText}>
             <div>Diana Mua</div>
             <TextLoop

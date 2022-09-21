@@ -32,7 +32,7 @@ const PageContainerStyles = {
   scrollYProgress: {
     position: 'sticky',
     width: '100vw',
-    top: 119,
+    top: 122,
     zIndex: 9,
     height: 5,
     background: '#fd905f',

@@ -5,6 +5,7 @@ import { createUseStyles } from 'react-jss'
 import { defaultLinkStyles } from './Links.styles'
 
 import { MdHome, MdArrowForwardIos } from 'react-icons/md'
+import { motion } from 'framer-motion'
 
 const useStyles = createUseStyles(defaultLinkStyles)
 
@@ -45,17 +46,20 @@ const Links = ({ wrapperClass, isSidebarToggled = false, toggleSidebar }) => {
         const activeLinkClass =
           route.path === currentLocation.pathname ? classes.focusedLink : null
         return (
-          <div
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 10 }}
             key={index}
             onClick={() => handleLinkClick(route.path)}
-            className={`${classes.defaultLink} ${activeLinkClass}`}
           >
-            {route.icon}
-            {!isSidebarToggled && <MdArrowForwardIos />}
-            {route.path === '/'
-              ? '/home'
-              : route.path.substring(1, route.path.length)}
-          </div>
+            <div className={`${classes.defaultLink} ${activeLinkClass}`}>
+              {route.icon}
+              {!isSidebarToggled && <MdArrowForwardIos />}
+              {route.path === '/'
+                ? '/home'
+                : route.path.substring(1, route.path.length)}
+            </div>
+          </motion.div>
         )
       })}
     </div>
