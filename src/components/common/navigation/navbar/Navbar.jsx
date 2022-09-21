@@ -17,16 +17,14 @@ import { actions } from '../../../../redux/actions'
 const useStyles = createUseStyles(NavbarStyles)
 
 const Navbar = () => {
-  const isSidebarToggled = useSelector((state) => state.isSidebarToggled)
-  const dispatch = useDispatch()
-  const { toggleSidebar } = bindActionCreators(actions, dispatch)
-
   const [isNavSticky, setIsNavSticky] = useState(false)
   const currentPath = useLocation()
+  const dispatch = useDispatch()
+  const navigateTo = useNavigate()
+  const isSidebarToggled = useSelector((state) => state.isSidebarToggled)
+  const { toggleSidebar } = bindActionCreators(actions, dispatch)
 
   useLockNavScroll(setIsNavSticky)
-
-  const navigateTo = useNavigate()
 
   const classes = useStyles({ isSidebarToggled, isNavSticky })
 

@@ -18,14 +18,15 @@ const NavbarStyles = {
     width: '100%',
     position: 'sticky',
     top: 0,
-    boxShadow: isNavSticky ? '0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%)' : 'none',
+    boxShadow: isNavSticky
+      ? '0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%)'
+      : 'none',
     zIndex: 1,
 
     '@media screen and (max-width: 768px)': {
       padding: [20, 20],
       position: 'relative'
-    },
-
+    }
   }),
 
   navLeftSide: {
@@ -36,7 +37,7 @@ const NavbarStyles = {
     alignItems: 'center',
     padding: 10,
     gap: 10,
-    fontSize: 14,
+    fontSize: 14
   },
 
   logoText: {
@@ -47,12 +48,13 @@ const NavbarStyles = {
   },
 
   animatingText: {
-    color: '#FD905F',
+    color: '#FD905F'
   },
 
   brandLogo: {
     width: '4rem',
-    filter: 'invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%)',
+    filter:
+      'invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%)',
 
     '&:hover': {
       cursor: 'pointer'
@@ -62,7 +64,7 @@ const NavbarStyles = {
   navRightSide: {
     animation: '$fadeInAnimation ease-in-out 1s',
     animationIterationCount: 1,
-    animationFillMode: 'forwards',
+    animationFillMode: 'forwards'
   },
 
   menuIcon: {

@@ -1,7 +1,7 @@
 const toggleSidebar = () => {
   return (dispatch) =>
     dispatch({
-      type: 'toggle'
+      type: 'TOGGLE_SIDEBAR'
     })
 }
 

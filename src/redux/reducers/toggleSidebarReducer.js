@@ -1,6 +1,6 @@
 const toggleSidebarReducer = (state = false, action) => {
   switch (action.type) {
-    case 'toggle': {
+    case 'TOGGLE_SIDEBAR': {
       return !state
     }
     default: {

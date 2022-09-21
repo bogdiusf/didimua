@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { Context } from '../../context/Context'
+import React from 'react'
 import { createUseStyles } from 'react-jss'
 import LoadingStyles from './Loading.styles'
 import brandLogo from '../../../assets/diana_logo_whitebg.svg'
@@ -7,9 +6,7 @@ import brandLogo from '../../../assets/diana_logo_whitebg.svg'
 const useStyles = createUseStyles(LoadingStyles)
 
 const Loading = () => {
-  const { isSidebarToggled } = useContext(Context)
-
-  const classes = useStyles({ isSidebarToggled })
+  const classes = useStyles()
 
   return (
     <div className={classes.loadingContainer}>

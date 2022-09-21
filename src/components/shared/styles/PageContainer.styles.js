@@ -22,9 +22,17 @@ const PageContainerStyles = {
     '& header, main': {
       animation: '$fadeInAnimation ease-in-out 0.5s',
       animationIterationCount: 1,
-      animationFillMode: 'forwards',
-    },
-  })
+      animationFillMode: 'forwards'
+    }
+  }),
+  scrollYProgress: {
+    position: 'sticky',
+    top: 119,
+    zIndex: 9,
+    height: 5,
+    background: '#fd905f',
+    transformOrigin: '0%'
+  }
 }
 
 export { PageContainerStyles }
