@@ -1,12 +1,4 @@
 const PageContainerStyles = {
-  '@keyframes fadeInAnimation': {
-    '0%': {
-      opacity: 0
-    },
-    '100%': {
-      opacity: 1
-    }
-  },
   pageContainer: ({ isSidebarToggled }) => ({
     transition: 'opacity 0.5s ease-in-out',
     opacity: isSidebarToggled ? 0.3 : 1,
@@ -21,12 +13,6 @@ const PageContainerStyles = {
 
     '@media screen and (max-width: 500px)': {
       width: '100%'
-    },
-
-    '& header, main': {
-      animation: '$fadeInAnimation ease-in-out 0.5s',
-      animationIterationCount: 1,
-      animationFillMode: 'forwards'
     }
   }),
   scrollYProgress: {
@@ -43,7 +29,7 @@ const PageContainerStyles = {
       height: 7.5
     }
   },
-  floatingButton: {
+  scrollToTopButton: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

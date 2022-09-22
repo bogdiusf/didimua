@@ -1,5 +1,4 @@
 const defaultLinkStyles = {
-
   '@keyframes bounce': {
     '0%, 20% ,50% ,80%, 100%': {
       transform: 'translateX(0)'
@@ -27,14 +26,13 @@ const defaultLinkStyles = {
       animation: '$bounce 1s infinite'
     },
 
-
     ...(isSidebarToggled && {
-      '& svg': { fontSize: 20, },
+      '& svg': { fontSize: 20 }
     }),
 
     '@media screen and (min-width: 768px)': {
       '&:hover': {
-        color: '#fd905f',
+        color: '#fd905f'
       },
       '&::after': {
         content: '""',
@@ -53,7 +51,7 @@ const defaultLinkStyles = {
       '&:hover::after': {
         transform: 'scaleX(1)',
         backgroundColor: '#fd905f'
-      },
+      }
     }
   }),
 
@@ -72,7 +70,7 @@ const defaultLinkStyles = {
         backgroundColor: '#fd905f',
         transformOrigin: 'bottom left',
         transition: 'transform 0.25s ease-in-out'
-      },
+      }
     }
   }
 }

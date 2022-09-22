@@ -2,41 +2,39 @@ import React from 'react'
 import { createUseStyles } from 'react-jss'
 import { PageContainerStyles } from '../shared/styles/PageContainer.styles'
 import { MdArrowCircleUp } from 'react-icons/md'
-
 import { useSelector } from 'react-redux'
+import Footer from './footer/Footer'
+import ScrollProgress from '../shared/components/transitions/ScrollProgress'
+import ElementSpringMotion from '../shared/components/transitions/ElementSpringMotion'
 
-import { motion, useScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const useStyles = createUseStyles(PageContainerStyles)
 
-import Footer from './footer/Footer'
-
 const TemplatePage = ({ header, main }) => {
-  const { scrollYProgress } = useScroll()
   const isSidebarToggled = useSelector((state) => state.isSidebarToggled)
   const classes = useStyles({ isSidebarToggled })
 
   return (
-    <>
-      <motion.div
-        className={classes.scrollYProgress}
-        style={{ scaleX: scrollYProgress }}
-      />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <ScrollProgress className={classes.scrollYProgress} />
       <div className={classes.pageContainer}>
         {header}
         {main}
-        <motion.div
-          // test button
-          className={classes.floatingButton}
-          whileHover={{ scale: 1.1 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        <ElementSpringMotion
+          className={classes.scrollToTopButton}
+          event={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <MdArrowCircleUp />
-        </motion.div>
+        </ElementSpringMotion>
         <Footer />
       </div>
-    </>
+    </motion.div>
   )
 }
 

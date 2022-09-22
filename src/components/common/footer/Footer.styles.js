@@ -1,13 +1,4 @@
 const FooterStyles = {
-  '@keyframes fadeInAnimation': {
-    '0%': {
-      opacity: 0
-    },
-    '100%': {
-      opacity: 1
-    },
-  },
-
   footerContainer: {
     height: 450,
     width: '100%',
@@ -30,9 +21,8 @@ const FooterStyles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fd905f',
+    backgroundColor: '#fd905f'
   }
-
 }
 
 export default FooterStyles

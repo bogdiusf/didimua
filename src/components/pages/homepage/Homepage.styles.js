@@ -1,13 +1,5 @@
 const HomepageStyles = {
   imgDefault: {
-    width: '100%',
-    opacity: 0,
-    filter: 'blur(5px)',
-    transform: 'translateX(-100%)',
-    transition: 'all 1s'
-  },
-
-  imgShow: {
     width: '100%'
   },
 
@@ -21,11 +13,7 @@ const HomepageStyles = {
     alignItems: 'center',
     padding: [0, 50],
     color: 'white',
-    backgroundColor: 'black',
-    opacity: 0,
-    filter: 'blur(5px)',
-    transform: 'translateX(-100%)',
-    transition: 'all 1s'
+    backgroundColor: 'black'
   }
 }
 

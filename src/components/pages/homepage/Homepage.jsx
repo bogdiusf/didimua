@@ -6,7 +6,8 @@ import PhotoCarousel from '../../shared/components/carousel/PhotoCarousel'
 
 import pic1 from '../../../assets/pic1.jpg'
 
-import { useIntersectionObserverAnimation } from '../../../utils/hooks/useIntersectionObserverAnimation'
+import { motion } from 'framer-motion'
+import LeftSlideIn from '../../shared/components/transitions/LeftSlideIn'
 
 const useStyles = createUseStyles(HomepageStyles)
 
@@ -22,38 +23,48 @@ const Header = () => {
 
 const Main = () => {
   const mainClasses = useStyles()
-  const observer = useIntersectionObserverAnimation()
-
-  useEffect(() => {
-    const elements = document.querySelectorAll('#intersection-observer')
-    elements.forEach((el) => observer.observe(el))
-  }, [])
 
   return (
     <main>
       <section>
-        <img alt="test-picture1" src={pic1} className={mainClasses.imgShow} />
+        <LeftSlideIn>
+          <img
+            alt="test-picture1"
+            src={pic1}
+            className={mainClasses.imgDefault}
+          />
+        </LeftSlideIn>
         <img
           alt="test-picture2"
           src={pic1}
           className={mainClasses.imgDefault}
-          id="intersection-observer"
         />
       </section>
 
       <section>
-        <div className={mainClasses.divDefault} id="intersection-observer">
-          Intersection Observer test - static implementation - not optimal at
-          all. Problems with calling observer hook with dynamic data, due to
-          unresolved element uniqueness problems
-        </div>
+        <LeftSlideIn>
+          <div className={mainClasses.divDefault}>
+            Intersection Observer test - static implementation - not optimal at
+            all. Problems with calling observer hook with dynamic data, due to
+            unresolved element uniqueness problems
+          </div>
+        </LeftSlideIn>
       </section>
     </main>
   )
 }
 
 function Homepage() {
-  return <TemplatePage header={<Header />} main={<Main />} />
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <TemplatePage header={<Header />} main={<Main />} />
+    </motion.div>
+  )
 }
 
 export default Homepage

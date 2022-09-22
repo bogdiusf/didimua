@@ -1,6 +1,5 @@
 import React from 'react'
 import TemplatePage from '../../common/TemplatePage'
-import _404Styles from './404.styles'
 
 const Header = () => (
   <header>

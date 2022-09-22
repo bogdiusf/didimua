@@ -21,7 +21,7 @@ const NavbarStyles = {
     boxShadow: isComponentSticky
       ? '0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%)'
       : 'none',
-    zIndex: 1,
+    zIndex: 5,
 
     '@media screen and (max-width: 768px)': {
       padding: [20, 20],
@@ -71,7 +71,7 @@ const NavbarStyles = {
     fontSize: 30,
     marginRight: 10,
 
-    '@media screen and (min-width: 769px)': {
+    '@media screen and (min-width: 768px)': {
       display: 'none'
     }
   },
