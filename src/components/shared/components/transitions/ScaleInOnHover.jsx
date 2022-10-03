@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const ElementSpringMotion = ({ children, className, event }) => {
+const ScaleInOnHover = ({ children, className, event }) => {
   return (
     <motion.div
       className={className}
@@ -14,4 +14,4 @@ const ElementSpringMotion = ({ children, className, event }) => {
   )
 }
 
-export default ElementSpringMotion
+export default ScaleInOnHover

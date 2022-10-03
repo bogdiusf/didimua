@@ -5,7 +5,7 @@ import { MdArrowCircleUp } from 'react-icons/md'
 import { useSelector } from 'react-redux'
 import Footer from './footer/Footer'
 import ScrollProgress from '../shared/components/transitions/ScrollProgress'
-import ElementSpringMotion from '../shared/components/transitions/ElementSpringMotion'
+import ScaleInOnHover from '../shared/components/transitions/ScaleInOnHover'
 
 import { motion } from 'framer-motion'
 
@@ -26,12 +26,12 @@ const TemplatePage = ({ header, main }) => {
       <div className={classes.pageContainer}>
         {header}
         {main}
-        <ElementSpringMotion
+        <ScaleInOnHover
           className={classes.scrollToTopButton}
           event={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <MdArrowCircleUp />
-        </ElementSpringMotion>
+        </ScaleInOnHover>
         <Footer />
       </div>
     </motion.div>

@@ -4,16 +4,21 @@ const HomepageStyles = {
   },
 
   divDefault: {
-    marginTop: 400,
-    marginBottom: 200,
-    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textSection: {
     height: 500,
+    marginBottom: 200,
+    padding: [0, 50],
+    color: 'white',
+    backgroundColor: 'black',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: [0, 50],
-    color: 'white',
-    backgroundColor: 'black'
+    gap: 20,
+    flexWrap: 'wrap'
   }
 }
 

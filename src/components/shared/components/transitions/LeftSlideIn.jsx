@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const LeftSlideIn = ({ children }) => {
-  const slideInVariants = {
+const LeftSlideIn = ({ children, delay = 0 }) => {
+  const childrenVariants = {
     offscreen: {
       x: '-100vw',
       opacity: 0
@@ -11,10 +11,8 @@ const LeftSlideIn = ({ children }) => {
       x: 0,
       opacity: 1,
       transition: {
-        type: 'spring',
-        bounce: 0.4,
-        stiffness: 50,
-        duration: 2
+        duration: 1,
+        delay: delay
       }
     }
   }
@@ -25,7 +23,7 @@ const LeftSlideIn = ({ children }) => {
       whileInView="onscreen"
       viewport={{ once: false }}
     >
-      <motion.div variants={slideInVariants}>{children}</motion.div>
+      <motion.div variants={childrenVariants}>{children}</motion.div>
     </motion.div>
   )
 }

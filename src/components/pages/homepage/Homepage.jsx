@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { createUseStyles } from 'react-jss'
 import { HomepageStyles } from './Homepage.styles'
 import TemplatePage from '../../common/TemplatePage'
@@ -8,6 +8,7 @@ import pic1 from '../../../assets/pic1.jpg'
 
 import { motion } from 'framer-motion'
 import LeftSlideIn from '../../shared/components/transitions/LeftSlideIn'
+import OpacityTransition from '../../shared/components/transitions/OpacityTransition'
 
 const useStyles = createUseStyles(HomepageStyles)
 
@@ -41,29 +42,33 @@ const Main = () => {
         />
       </section>
 
-      <section>
-        <LeftSlideIn>
-          <div className={mainClasses.divDefault}>
-            Intersection Observer test - static implementation - not optimal at
-            all. Problems with calling observer hook with dynamic data, due to
-            unresolved element uniqueness problems
-          </div>
-        </LeftSlideIn>
-      </section>
+      <LeftSlideIn>
+        <section className={mainClasses.textSection}>
+          <LeftSlideIn>
+            <div className={mainClasses.divDefault}>
+              Intersection Observer test - static implementation - not optimal
+              at all. Problems with calling observer hook with dynamic data, due
+              to unresolved element uniqueness problems
+            </div>
+          </LeftSlideIn>
+          <LeftSlideIn>
+            <div className={mainClasses.divDefault}>
+              Intersection Observer test - static implementation - not optimal
+              at all. Problems with calling observer hook with dynamic data, due
+              to unresolved element uniqueness problems
+            </div>
+          </LeftSlideIn>
+        </section>
+      </LeftSlideIn>
     </main>
   )
 }
 
 function Homepage() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
-    >
+    <OpacityTransition>
       <TemplatePage header={<Header />} main={<Main />} />
-    </motion.div>
+    </OpacityTransition>
   )
 }
 
